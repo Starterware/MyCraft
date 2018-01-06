@@ -2,6 +2,7 @@
 #include <math.h> 
 
 #include <map>
+#include <vector>
 #include <unordered_set>
 
 using namespace std;
