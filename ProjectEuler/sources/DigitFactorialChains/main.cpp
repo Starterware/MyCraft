@@ -1,4 +1,7 @@
-#define USE_DEBUG
+/*
+	Project Euler Problem 74 - Digit Factorial Chains
+*/
+
 #include "project_euler_environment.hpp"
 
 int factorial[10];

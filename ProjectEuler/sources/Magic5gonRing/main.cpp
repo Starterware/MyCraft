@@ -1,3 +1,7 @@
+/*
+	Project Euler Problem 68 - Magic 5-gon Ring
+*/
+
 #include "project_euler_environment.hpp"
 
 int gon_line_total = 0;
