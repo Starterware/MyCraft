@@ -32,8 +32,11 @@ First run the setup perl script that can be found in the [project euler director
 
 ### Problems
 
-* [Magic 5-gon Ring](ProjectEuler/sources/Magic5gonRing): [link to problem](https://projecteuler.net/problem=68)
-* [Ordered Fractions](ProjectEuler/sources/OrderedFractions): [link to problem](https://projecteuler.net/problem=71)
-* [Counting Fractions](ProjectEuler/sources/CountingFractions): [link to problem](https://projecteuler.net/problem=72)	
-* [Digit Factorial Chains](ProjectEuler/sources/DigitFactorialChains): [link to problem](https://projecteuler.net/problem=73)
+* [Counting Fractions](https://projecteuler.net/problem=72): source can be found [here](ProjectEuler/sources/CountingFractions)
+* [Counting Fractions In A Range](https://projecteuler.net/problem=73): source can be found [here](ProjectEuler/sources/CountingFractionsInARange)
+* [Digit Factorial Chains](https://projecteuler.net/problem=74): source can be found [here](ProjectEuler/sources/DigitFactorialChains)
+* [Magic 5-gon Ring](https://projecteuler.net/problem=68): source can be found [here](ProjectEuler/sources/Magic5gonRing)
+* [Ordered Fractions](https://projecteuler.net/problem=71): source can be found [here](ProjectEuler/sources/OrderedFractions)
+* [Prime Summations](https://projecteuler.net/problem=77): source can be found [here](ProjectEuler/sources/PrimeSummations)
+* [Singular Integer Right Triangles](https://projecteuler.net/problem=75): source can be found [here](ProjectEuler/sources/SingularIntegerRightTriangles)
 
