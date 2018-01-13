@@ -45,3 +45,22 @@ std::unordered_set<int>* compute_prime_factors(int size)
 	delete[] is_prime;
 	return set;
 }
+
+ll compute_greatest_common_divisor(ll a, ll b)
+{
+	ll tmp;
+
+	while (b != 0)
+	{
+		tmp = b;
+		b = a % b;
+		a = tmp;
+	}
+
+	return a;
+}
+
+bool are_coprime(ll a, ll b)
+{
+	return compute_greatest_common_divisor(a, b) == 1;
+}
