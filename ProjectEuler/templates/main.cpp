@@ -1,5 +1,5 @@
 /*
-	Project Euler Problem X: 
+	Project Euler Problem X -  
 */
 
 #include "project_euler_environment.hpp"
