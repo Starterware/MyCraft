@@ -1,5 +1,5 @@
 /*
-	Project Euler Problem X: 
+	Project Euler Problem 78 - Coin Partitions
 */
 
 #include "project_euler_environment.hpp"

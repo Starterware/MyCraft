@@ -1,7 +1,7 @@
 # Starterware
 
 Welcome to **Starterware Training**, I created this repository in order to work on my craft.
-It will probably contain different types of exercises, languages and techniques.
+It's a space where I'm able to try out different kind of practices, exercises, programming languages and techniques.
 
 ## Table of Contents
 
@@ -20,18 +20,21 @@ My project euler username is **Starter101**. Not all the problems I did are list
 
 #### Prerequisites
 
-TODO
-
-First run the setup perl script that can be found in the [project euler directory](ProjectEuler): __setup.pl__, it will generate the CMakeFileList.txt for all the problems inside the sources folder.
+* cmake must be installed and accessible from the sources
+* The sources require a C++ 11 compiler
 
 #### Build & Run
 
+* First, run the __setup.pl__ script which can be found in the [project euler directory](ProjectEuler)
+	* It generates the CMakeFileList.txt for all the sources
 * Create a build directory in the source folder where CMakeFileList.txt is
-* In a command prompt: __cmake ..__ (I add )
-	* [__-G "Unix Makefiles"__], afterwards run __make__
+* In a command prompt, in the build directory run:
+	* __cmake ..__ (I add [__-G "Unix Makefiles"__] to generate a simple makefile)
+	* Afterwards run __make__ to compile and run the program
 
 ### Problems
 
+* [Coin Partitions](https://projecteuler.net/problem=78): source can be found [here](ProjectEuler/sources/CoinPartitions)
 * [Counting Fractions](https://projecteuler.net/problem=72): source can be found [here](ProjectEuler/sources/CountingFractions)
 * [Counting Fractions In A Range](https://projecteuler.net/problem=73): source can be found [here](ProjectEuler/sources/CountingFractionsInARange)
 * [Digit Factorial Chains](https://projecteuler.net/problem=74): source can be found [here](ProjectEuler/sources/DigitFactorialChains)
@@ -39,4 +42,5 @@ First run the setup perl script that can be found in the [project euler director
 * [Ordered Fractions](https://projecteuler.net/problem=71): source can be found [here](ProjectEuler/sources/OrderedFractions)
 * [Prime Summations](https://projecteuler.net/problem=77): source can be found [here](ProjectEuler/sources/PrimeSummations)
 * [Singular Integer Right Triangles](https://projecteuler.net/problem=75): source can be found [here](ProjectEuler/sources/SingularIntegerRightTriangles)
+* [Square Root Digital Expansion](https://projecteuler.net/problem=80): source can be found [here](ProjectEuler/sources/SquareRootDigitalExpansion)
 
