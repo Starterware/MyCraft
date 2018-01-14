@@ -1,5 +1,5 @@
 /*
-	Project Euler Problem 80: Square Root Digital Expansion
+	Project Euler Problem 80 - Square Root Digital Expansion
 */
 
 #include "project_euler_environment.hpp"
