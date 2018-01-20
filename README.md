@@ -32,7 +32,7 @@ My project euler username is **Starter101**. Not all the problems I did are list
 	* __cmake ..__ (I add [__-G "Unix Makefiles"__] to generate a simple makefile)
 	* Afterwards run __make__ to compile and run the program
 	
-__Rem: the compiling instructions represent my preferred way and allow to compile easily on all platforms. Nothing prevents you to use your own compilation method.__
+_Rem: the compiling instructions represent my preferred way and allow to compile easily on all platforms. Nothing prevents you to use your own compilation method._
 
 ### Problems
 
