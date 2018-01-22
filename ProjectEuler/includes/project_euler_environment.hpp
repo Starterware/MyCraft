@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h> 
 
+#include <set> 	
 #include <map>
 #include <vector>
 #include <unordered_set>
@@ -30,7 +31,7 @@ using namespace std;
 #define forj2(s,n) for(int j = s; j < n; j++)
 #define fork2(s,n) for(int k = s; k < n; k++)
 
-#define forit(v) for(auto it = v.begin(); it != v.end(); it++)
-#define forrit(v) for(auto it = v.rbegin(); it != v.rend(); it++)
-#define forit2(v) for(auto it2 = v.begin(); it2 != v.end(); it2++)
+#define forit(v) for(auto it = (v).begin(); it != (v).end(); it++)
+#define forrit(v) for(auto it = (v).rbegin(); it != (v).rend(); it++)
+#define forit2(v) for(auto it2 = (v).begin(); it2 != (v).end(); it2++)
 	

@@ -2,7 +2,7 @@
 
 std::vector<int>* compute_primes(int size)
 {
-	std::vector<int> *v = new std::vector<int>[size + 1];
+	std::vector<int> *v = new std::vector<int>();
 	bool *is_prime = new bool[size + 1];
 
 	fori(size + 1)
