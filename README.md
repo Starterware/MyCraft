@@ -36,6 +36,7 @@ _Rem: the compiling instructions represent my preferred way and allow to compile
 
 ### Problems
 
+* [Arranged Probability ](https://projecteuler.net/problem=100): source can be found [here](ProjectEuler/sources/ArrangedProbability)
 * [Coin Partitions](https://projecteuler.net/problem=78): source can be found [here](ProjectEuler/sources/CoinPartitions)
 * [Counting Fractions](https://projecteuler.net/problem=72): source can be found [here](ProjectEuler/sources/CountingFractions)
 * [Counting Fractions In A Range](https://projecteuler.net/problem=73): source can be found [here](ProjectEuler/sources/CountingFractionsInARange)
