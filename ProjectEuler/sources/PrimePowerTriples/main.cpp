@@ -1,5 +1,5 @@
 /*
-	Project Euler Problem X -  
+	Project Euler Problem 87 - Prime Power Triples
 */
 
 #include "project_euler_environment.hpp"

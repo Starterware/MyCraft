@@ -45,9 +45,9 @@ _Rem: the compiling instructions represent my preferred way and allow to compile
 * [Magic 5-gon Ring](https://projecteuler.net/problem=68): source can be found [here](ProjectEuler/sources/Magic5gonRing)
 * [Monopoly Odds ](https://projecteuler.net/problem=84): source can be found [here](ProjectEuler/sources/MonopolyOdds)
 * [Ordered Fractions](https://projecteuler.net/problem=71): source can be found [here](ProjectEuler/sources/OrderedFractions)
-* [ ](https://projecteuler.net/problem=X): source can be found [here](ProjectEuler/sources/PrimePowerTriples)
+* [Prime Power Triples](https://projecteuler.net/problem=87): source can be found [here](ProjectEuler/sources/PrimePowerTriples)
 * [Prime Summations](https://projecteuler.net/problem=77): source can be found [here](ProjectEuler/sources/PrimeSummations)
-* [ ](https://projecteuler.net/problem=X): source can be found [here](ProjectEuler/sources/RomanNumerals)
+* [Roman Numerals](https://projecteuler.net/problem=89): source can be found [here](ProjectEuler/sources/RomanNumerals)
 * [Singular Integer Right Triangles](https://projecteuler.net/problem=75): source can be found [here](ProjectEuler/sources/SingularIntegerRightTriangles)
 * [Square Root Digital Expansion](https://projecteuler.net/problem=80): source can be found [here](ProjectEuler/sources/SquareRootDigitalExpansion)
 
