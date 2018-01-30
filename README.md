@@ -41,6 +41,7 @@ _Rem: the compiling instructions represent my preferred way and allow to compile
 * [Counting Fractions](https://projecteuler.net/problem=72): source can be found [here](ProjectEuler/sources/CountingFractions)
 * [Counting Fractions In A Range](https://projecteuler.net/problem=73): source can be found [here](ProjectEuler/sources/CountingFractionsInARange)
 * [Counting Rectangles ](https://projecteuler.net/problem=85): source can be found [here](ProjectEuler/sources/CountingRectangles)
+* [Cuboid Route](https://projecteuler.net/problem=86): source can be found [here](ProjectEuler/sources/CuboidRoute)
 * [Digit Factorial Chains](https://projecteuler.net/problem=74): source can be found [here](ProjectEuler/sources/DigitFactorialChains)
 * [Magic 5-gon Ring](https://projecteuler.net/problem=68): source can be found [here](ProjectEuler/sources/Magic5gonRing)
 * [Monopoly Odds ](https://projecteuler.net/problem=84): source can be found [here](ProjectEuler/sources/MonopolyOdds)
