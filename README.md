@@ -51,4 +51,5 @@ _Rem: the compiling instructions represent my preferred way and allow to compile
 * [Roman Numerals](https://projecteuler.net/problem=89): source can be found [here](ProjectEuler/sources/RomanNumerals)
 * [Singular Integer Right Triangles](https://projecteuler.net/problem=75): source can be found [here](ProjectEuler/sources/SingularIntegerRightTriangles)
 * [Square Root Digital Expansion](https://projecteuler.net/problem=80): source can be found [here](ProjectEuler/sources/SquareRootDigitalExpansion)
+* [Su Doku](https://projecteuler.net/problem=96): source can be found [here](ProjectEuler/sources/SuDoku)
 
