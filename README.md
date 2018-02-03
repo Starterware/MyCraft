@@ -48,6 +48,7 @@ _Rem: the compiling instructions represent my preferred way and allow to compile
 * [Ordered Fractions](https://projecteuler.net/problem=71): source can be found [here](ProjectEuler/sources/OrderedFractions)
 * [Prime Power Triples](https://projecteuler.net/problem=87): source can be found [here](ProjectEuler/sources/PrimePowerTriples)
 * [Prime Summations](https://projecteuler.net/problem=77): source can be found [here](ProjectEuler/sources/PrimeSummations)
+* [Right Triangle With Integer Coordinates](https://projecteuler.net/problem=91): source can be found [here](ProjectEuler/sources/RightTriangleWithIntegerCoordinates)
 * [Roman Numerals](https://projecteuler.net/problem=89): source can be found [here](ProjectEuler/sources/RomanNumerals)
 * [Singular Integer Right Triangles](https://projecteuler.net/problem=75): source can be found [here](ProjectEuler/sources/SingularIntegerRightTriangles)
 * [Square Root Digital Expansion](https://projecteuler.net/problem=80): source can be found [here](ProjectEuler/sources/SquareRootDigitalExpansion)
