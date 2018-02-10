@@ -37,7 +37,8 @@ _Rem: the compiling instructions represent my preferred way and allow to compile
 ### Problems
 
 * [Almost Equilateral Triangles ](https://projecteuler.net/problem=94): source can be found [here](ProjectEuler/sources/AlmostEquilateralTriangles)
-* [ ](https://projecteuler.net/problem=X): source can be found [here](ProjectEuler/sources/AmicableChains)
+* [Amicable Chains  ](https://projecteuler.net/problem=95): source can be found [here](ProjectEuler/sources/AmicableChains)
+* [Arithmetic Expressions](https://projecteuler.net/problem=93): source can be found [here](ProjectEuler/sources/ArithmeticExpressions)
 * [Arranged Probability ](https://projecteuler.net/problem=100): source can be found [here](ProjectEuler/sources/ArrangedProbability)
 * [Coin Partitions](https://projecteuler.net/problem=78): source can be found [here](ProjectEuler/sources/CoinPartitions)
 * [Counting Fractions](https://projecteuler.net/problem=72): source can be found [here](ProjectEuler/sources/CountingFractions)

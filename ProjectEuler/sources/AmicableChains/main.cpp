@@ -1,5 +1,5 @@
 /*
-	Project Euler Problem X -  
+	Project Euler Problem 95 - Amicable Chains  
 */
 
 #include "project_euler_environment.hpp"
