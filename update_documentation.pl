@@ -21,7 +21,7 @@ sub RetrieveProjectEulerInfo
 sub BuildProjectEulerLink
 {
 	my ($name, $number, $dir) = @_;
-	return "* $name : [[problem $number link](https://projecteuler.net/problem=$number)] [[source]($dir)]\n";
+	return "* $name : problem $number [[link]](https://projecteuler.net/problem=$number) [[source]]($dir)\n";
 }
 
 sub BuildProjectEulerLinkForDir
