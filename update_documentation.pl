@@ -21,14 +21,20 @@ sub RetrieveProjectEulerInfo
 sub BuildProjectEulerLink
 {
 	my ($name, $number, $dir) = @_;
-	return "* [$name](https://projecteuler.net/problem=$number): source can be found [here]($dir)\n";
+	return "* $name : [[problem $number link](https://projecteuler.net/problem=$number)] [[source]($dir)]\n";
 }
 
 sub BuildProjectEulerLinkForDir
 {
 	my ($dir) = @_;
     my @info = RetrieveProjectEulerInfo($dir);
-	return BuildProjectEulerLink($info[2], $info[1], $dir);
+	my $name = $info[2];
+	my $number = $info[1];
+	
+	$name =~ s/^\s+|\s+$//g;
+	$number =~ s/^\s+|\s+$//g;
+	
+	return BuildProjectEulerLink($name, $number, $dir);
 }
 
 sub BuildProjectEulerLinks

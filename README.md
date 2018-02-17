@@ -36,27 +36,27 @@ _Rem: the compiling instructions represent my preferred way and allow to compile
 
 ### Problems
 
-* [Almost Equilateral Triangles ](https://projecteuler.net/problem=94): source can be found [here](ProjectEuler/sources/AlmostEquilateralTriangles)
-* [Amicable Chains  ](https://projecteuler.net/problem=95): source can be found [here](ProjectEuler/sources/AmicableChains)
-* [	Anagramic Squares](https://projecteuler.net/problem=98): source can be found [here](ProjectEuler/sources/AnagramicSquares)
-* [Arithmetic Expressions](https://projecteuler.net/problem=93): source can be found [here](ProjectEuler/sources/ArithmeticExpressions)
-* [Arranged Probability ](https://projecteuler.net/problem=100): source can be found [here](ProjectEuler/sources/ArrangedProbability)
-* [Coin Partitions](https://projecteuler.net/problem=78): source can be found [here](ProjectEuler/sources/CoinPartitions)
-* [Counting Fractions](https://projecteuler.net/problem=72): source can be found [here](ProjectEuler/sources/CountingFractions)
-* [Counting Fractions In A Range](https://projecteuler.net/problem=73): source can be found [here](ProjectEuler/sources/CountingFractionsInARange)
-* [Counting Rectangles ](https://projecteuler.net/problem=85): source can be found [here](ProjectEuler/sources/CountingRectangles)
-* [Cube Digit Pairs](https://projecteuler.net/problem=90): source can be found [here](ProjectEuler/sources/CubeDigitPairs)
-* [Cuboid Route](https://projecteuler.net/problem=86): source can be found [here](ProjectEuler/sources/CuboidRoute)
-* [Digit Factorial Chains](https://projecteuler.net/problem=74): source can be found [here](ProjectEuler/sources/DigitFactorialChains)
-* [Magic 5-gon Ring](https://projecteuler.net/problem=68): source can be found [here](ProjectEuler/sources/Magic5gonRing)
-* [Monopoly Odds ](https://projecteuler.net/problem=84): source can be found [here](ProjectEuler/sources/MonopolyOdds)
-* [Ordered Fractions](https://projecteuler.net/problem=71): source can be found [here](ProjectEuler/sources/OrderedFractions)
-* [Prime Power Triples](https://projecteuler.net/problem=87): source can be found [here](ProjectEuler/sources/PrimePowerTriples)
-* [Prime Summations](https://projecteuler.net/problem=77): source can be found [here](ProjectEuler/sources/PrimeSummations)
-* [Product-Sum Numbers](https://projecteuler.net/problem=88): source can be found [here](ProjectEuler/sources/ProductSumNumbers)
-* [Right Triangle With Integer Coordinates](https://projecteuler.net/problem=91): source can be found [here](ProjectEuler/sources/RightTriangleWithIntegerCoordinates)
-* [Roman Numerals](https://projecteuler.net/problem=89): source can be found [here](ProjectEuler/sources/RomanNumerals)
-* [Singular Integer Right Triangles](https://projecteuler.net/problem=75): source can be found [here](ProjectEuler/sources/SingularIntegerRightTriangles)
-* [Square Root Digital Expansion](https://projecteuler.net/problem=80): source can be found [here](ProjectEuler/sources/SquareRootDigitalExpansion)
-* [Su Doku](https://projecteuler.net/problem=96): source can be found [here](ProjectEuler/sources/SuDoku)
+* Almost Equilateral Triangles : [[problem 94 link](https://projecteuler.net/problem=94)] [[source](ProjectEuler/sources/AlmostEquilateralTriangles)]
+* Amicable Chains : [[problem 95 link](https://projecteuler.net/problem=95)] [[source](ProjectEuler/sources/AmicableChains)]
+* Anagramic Squares : [[problem 98 link](https://projecteuler.net/problem=98)] [[source](ProjectEuler/sources/AnagramicSquares)]
+* Arithmetic Expressions : [[problem 93 link](https://projecteuler.net/problem=93)] [[source](ProjectEuler/sources/ArithmeticExpressions)]
+* Arranged Probability : [[problem 100 link](https://projecteuler.net/problem=100)] [[source](ProjectEuler/sources/ArrangedProbability)]
+* Coin Partitions : [[problem 78 link](https://projecteuler.net/problem=78)] [[source](ProjectEuler/sources/CoinPartitions)]
+* Counting Fractions : [[problem 72 link](https://projecteuler.net/problem=72)] [[source](ProjectEuler/sources/CountingFractions)]
+* Counting Fractions In A Range : [[problem 73 link](https://projecteuler.net/problem=73)] [[source](ProjectEuler/sources/CountingFractionsInARange)]
+* Counting Rectangles : [[problem 85 link](https://projecteuler.net/problem=85)] [[source](ProjectEuler/sources/CountingRectangles)]
+* Cube Digit Pairs : [[problem 90 link](https://projecteuler.net/problem=90)] [[source](ProjectEuler/sources/CubeDigitPairs)]
+* Cuboid Route : [[problem 86 link](https://projecteuler.net/problem=86)] [[source](ProjectEuler/sources/CuboidRoute)]
+* Digit Factorial Chains : [[problem 74 link](https://projecteuler.net/problem=74)] [[source](ProjectEuler/sources/DigitFactorialChains)]
+* Magic 5-gon Ring : [[problem 68 link](https://projecteuler.net/problem=68)] [[source](ProjectEuler/sources/Magic5gonRing)]
+* Monopoly Odds : [[problem 84 link](https://projecteuler.net/problem=84)] [[source](ProjectEuler/sources/MonopolyOdds)]
+* Ordered Fractions : [[problem 71 link](https://projecteuler.net/problem=71)] [[source](ProjectEuler/sources/OrderedFractions)]
+* Prime Power Triples : [[problem 87 link](https://projecteuler.net/problem=87)] [[source](ProjectEuler/sources/PrimePowerTriples)]
+* Prime Summations : [[problem 77 link](https://projecteuler.net/problem=77)] [[source](ProjectEuler/sources/PrimeSummations)]
+* Product-Sum Numbers : [[problem 88 link](https://projecteuler.net/problem=88)] [[source](ProjectEuler/sources/ProductSumNumbers)]
+* Right Triangle With Integer Coordinates : [[problem 91 link](https://projecteuler.net/problem=91)] [[source](ProjectEuler/sources/RightTriangleWithIntegerCoordinates)]
+* Roman Numerals : [[problem 89 link](https://projecteuler.net/problem=89)] [[source](ProjectEuler/sources/RomanNumerals)]
+* Singular Integer Right Triangles : [[problem 75 link](https://projecteuler.net/problem=75)] [[source](ProjectEuler/sources/SingularIntegerRightTriangles)]
+* Square Root Digital Expansion : [[problem 80 link](https://projecteuler.net/problem=80)] [[source](ProjectEuler/sources/SquareRootDigitalExpansion)]
+* Su Doku : [[problem 96 link](https://projecteuler.net/problem=96)] [[source](ProjectEuler/sources/SuDoku)]
 
