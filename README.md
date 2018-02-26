@@ -1,7 +1,7 @@
 # Starterware
 
 Welcome to **Starterware Training**, I created this repository in order to work on my craft.
-It's a space where I'm able to try out different kind of practices, exercises, programming languages and techniques.
+It's a space where I try out different kind of practices, exercises, programming languages and techniques.
 
 ## Table of Contents
 
@@ -10,17 +10,31 @@ It's a space where I'm able to try out different kind of practices, exercises, p
 
 ## Kata
 
-TODO
+### How to Build & Run
+
+#### Python
+
+For python, I used [nose](http://nose.readthedocs.io/en/latest/) to run the tests and [spyder](https://pythonhosted.org/spyder/) as IDE in order to have nice formatted unit tests outputs.
+
+When nose is installed and accessible from any directory :
+* In a command prompt, go to the directory containing the unit tests
+* Run nosetests, and the tests results will appear
+
+#### C++
+
+### Katas
+
+* [String Calculator](Kata/sources/StringCalculator/README.md) : implemented in [python](Kata/sources/StringCalculator/python)
 
 ## Project Euler Problems
 
-My project euler username is **Starter101**. Not all the problems I did are listed here.
+My project euler username is **Starter101**. Not all the problems I did are listed below and all of them are done in C++.
 
 ### How to Build & Run
 
 #### Prerequisites
 
-* cmake must be installed and accessible from the sources
+* CMake must be installed and accessible from the sources
 * The sources require a C++ 11 compiler
 
 #### Build & Run
@@ -59,4 +73,3 @@ _Rem: the compiling instructions represent my preferred way and allow to compile
 * [Singular Integer Right Triangles](https://projecteuler.net/problem=75) : problem 75 [[source](ProjectEuler/sources/SingularIntegerRightTriangles)]
 * [Square Root Digital Expansion](https://projecteuler.net/problem=80) : problem 80 [[source](ProjectEuler/sources/SquareRootDigitalExpansion)]
 * [Su Doku](https://projecteuler.net/problem=96) : problem 96 [[source](ProjectEuler/sources/SuDoku)]
-
