@@ -1,8 +1,8 @@
-[Home](https://github.com/Starterware/MyCraft)
+[Home](https://github.com/Starterware/Training)
 
 # String Calculator 
 
-## Description (from [link](http://osherove.com/tdd-kata-1/))
+The complete description can be found at [link](http://osherove.com/tdd-kata-1/).
 
 1. Create a simple string calculator method:
 	* It can take 0, 1 or 2 numbers, and will return their sum (for an empty string it will return 0)
