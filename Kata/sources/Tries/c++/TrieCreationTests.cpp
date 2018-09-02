@@ -29,9 +29,21 @@ TEST_F(TrieTest, FindsEmptyWhenInserted)
 	ASSERT_THAT(trie.search(""), Eq(true));
 }
 
-TEST_F(TrieTest, DoesNotFinds1LetterWordInTrieContainingEmpty)
+TEST_F(TrieTest, DoesNotFindWordWhenOnlyPrefixIsInserted)
 {
-	trie.insert("");
-	ASSERT_THAT(trie.search("a"), Eq(false));
+	trie.insert("ab");
+	ASSERT_THAT(trie.search("abc"), Eq(false));
 }
 
+TEST_F(TrieTest, FindsWordWhenInserted)
+{
+	trie.insert("abc");
+	ASSERT_THAT(trie.search("abc"), Eq(true));
+}
+
+TEST_F(TrieTest, CanInsertMultipleWordsAtOnce)
+{
+	std::vector<std::string> words{ "abcdef", "ghijkl", "abc", "abd", "abxyz" };
+	trie.insert(words);
+	ASSERT_THAT(trie.search("abc"), Eq(true));
+}
