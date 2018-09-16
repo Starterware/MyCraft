@@ -24,7 +24,7 @@ TEST(data_stucture_tests, arrays)
 	EXPECT_THAT(elem, Eq(1));
 
 	// How to check if it is empty
-	EXPECT_THAT(v, Eq(false));
+	EXPECT_THAT(v == NULL, Eq(false));
 
 	// How to check the size
 	EXPECT_THAT(sizeof(v) / sizeof(v[0]), Eq(4));
@@ -225,7 +225,7 @@ TEST(data_stucture_tests, stacks)
 	EXPECT_THAT(s.empty(), Eq(false));
 	
 	// How to check the size
-	EXPECT_THAT(s.size(), Eq(3));
+	EXPECT_THAT(s.size(), Eq(4));
 
 	// How to remove an element - O(1)
 	s.pop();
@@ -255,7 +255,7 @@ TEST(data_stucture_tests, queues)
 	EXPECT_THAT(q.empty(), Eq(false));
 
 	// How to check the size
-	EXPECT_THAT(q.size(), Eq(3));
+	EXPECT_THAT(q.size(), Eq(4));
 
 	// How to remove an element - O(1)
 	q.pop();
