@@ -5,8 +5,24 @@
 Started a little project to see the impact of Levenstein Distance performance in a Trie (Recursive and iterative) vs a simple Set.
 The Tries are implemented in such a way that they don't have leaf nodes in order to limit the memory use. 
 
+## Usage
 
-## Benchmark Results
+Without parameters the program will run the unit test (googletests) and when adding --benchmarks, it will run the benchmarks.
+At the moment, the program only works on Windows systems.
+
+## Benchmarks
+
+### System
+
+Run on a laptop with windows 10 Home
+
+Processor: Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
+
+Installed Memory: 8,00 GB
+
+System Type: 64-bit OS, x64-based processor
+
+### Results
 
 =========== Set Dictionary benchmark tests ===========
 
