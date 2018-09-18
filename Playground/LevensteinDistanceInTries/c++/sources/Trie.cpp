@@ -60,7 +60,7 @@ bool Trie::search(const std::string& word) const
 
 	return current_node == NULL || current_node->is_end_point;
 }
-#include <iostream>
+
 int Trie::search_best_matches(const std::string & word, std::vector<std::string>& matches)
 {
 	matches.clear();

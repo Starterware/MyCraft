@@ -14,7 +14,7 @@ public:
 	void run();
 
 private:
-	void run_dictionary_benchmarks(std::shared_ptr<Dictionary>& dictionary, std::shared_ptr<StringMetricCalculator>& calculator, const std::string& name);
+	void run_dictionary_benchmarks(std::shared_ptr<Dictionary>& dictionary, const std::string& name);
 	void print_banner(const std::string& name);
 };
 

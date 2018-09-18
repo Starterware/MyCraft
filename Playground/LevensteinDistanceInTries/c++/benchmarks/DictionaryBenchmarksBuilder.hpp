@@ -11,12 +11,15 @@ public:
 	DictionaryBenchmarksBuilder& with_small_set();
 	DictionaryBenchmarksBuilder& with_normal_set();
 	DictionaryBenchmarksBuilder& with_big_set();
-	DictionaryBenchmarksBuilder& with_dictionary(std::shared_ptr<Dictionary>& dictionary, std::shared_ptr<StringMetricCalculator>& calculator, const std::string& name);
+	DictionaryBenchmarksBuilder& with_dictionary(std::shared_ptr<Dictionary>& dictionary, const std::string& name);
+	DictionaryBenchmarksBuilder& with_LV();
 
 	std::shared_ptr<DictionaryBenchmarks> build();
 
 protected:
 	std::shared_ptr<DictionaryBenchmarks> benchmarks;
+	std::shared_ptr<Dictionary> dictionary; 
+	std::shared_ptr<StringMetricCalculator> calculator;
 };
 
 #endif

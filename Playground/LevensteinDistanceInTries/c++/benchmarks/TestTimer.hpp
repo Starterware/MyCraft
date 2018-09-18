@@ -31,22 +31,3 @@ private:
 };
 
 #endif
-
-//#include "windows.h"
-//#include "psapi.h"
-//
-//MEMORYSTATUSEX memInfo;
-//memInfo.dwLength = sizeof(MEMORYSTATUSEX);
-//GlobalMemoryStatusEx(&memInfo);
-//DWORDLONG totalVirtualMem = memInfo.ullTotalPageFile;
-//
-//DWORDLONG virtualMemUsed = memInfo.ullTotalPageFile - memInfo.ullAvailPageFile;
-//
-//PROCESS_MEMORY_COUNTERS_EX pmc;
-//GetProcessMemoryInfo(GetCurrentProcess(), &pmc, sizeof(pmc));
-//SIZE_T virtualMemUsedByMe = pmc.PrivateUsage;
-//
-//DWORDLONG totalPhysMem = memInfo.ullTotalPhys;
-//
-//DWORDLONG physMemUsed = memInfo.ullTotalPhys - memInfo.ullAvailPhys;
-//SIZE_T physMemUsedByMe = pmc.WorkingSetSize;

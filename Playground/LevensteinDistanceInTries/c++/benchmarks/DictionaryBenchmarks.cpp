@@ -1,6 +1,7 @@
 #include "DictionaryBenchmarks.hpp"
 #include "BenchmarkWords.hpp"
 #include "TestTimer.hpp"
+#include "TestSpace.hpp"
 
 #include <sstream>
 #include <string>
@@ -37,6 +38,7 @@ void DictionaryBenchmarks::run()
 
 void DictionaryBenchmarks::run_creation()
 {
+	TestSpace space("Used Memory", *output_stream);
 	TestTimer timer("Creation", *output_stream);
 
 	size_t step = BenchmarkWords::words->size() / size;
@@ -87,12 +89,8 @@ void DictionaryBenchmarks::run_search_best_matches()
 	{
 		std::vector<std::string> matches;
 		dictionary->search_best_matches(word_it.first, matches);
-		if (matches != word_it.second) {
-			*output_stream << "fault" << word_it.first << std::endl;
-			for (auto& a : matches)
-				*output_stream << a << std::endl;
+		if (matches != word_it.second) 
 			throw std::exception(std::string("Unexpected results for search best matches on word " + word_it.first).c_str());
-		}
 	}
 }
 
