@@ -6,7 +6,6 @@ It's a space where I try out different kind of practices, exercises, programming
 ## Table of Contents
 
 * [Kata](#kata)
-* [Languages](#languages)
 * [Playground](#playground)
 * [Project Euler](#project-euler-problems)
 
@@ -35,7 +34,9 @@ They allow to train easily your Test Driven Development skills.
 	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows)
 
 _Rem 1: some projects may not work on all platforms. See the projects page for more information about that._
+
 _Rem 2: in Visual Studio, when gtest is used, set the project to the same C/C++ > Code Generation > Runtime Library._
+
 _Rem 3: nothing prevents you to use your own compilation method._
 
 #### Python
@@ -74,7 +75,9 @@ Space for testing out little projects/ideas that take a bit of time.
 	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows)
 
 _Rem 1: some projects may not work on all platforms. See the projects page for more information about that._
+
 _Rem 2: in Visual Studio, when gtest is used, set the project to the same C/C++ > Code Generation > Runtime Library._
+
 _Rem 3: nothing prevents you to use your own compilation method._
 
 ### Projects
