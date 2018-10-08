@@ -21,7 +21,7 @@ void Trie::insert(const std::string& word)
 	{
 		if (current_node->children.find(word[i]) != current_node->children.end())
 		{
-			if (current_node->children.at(word[i]) == NULL) 
+			if (!has_children(current_node->children.at(word[i]))) 
 			{
 				if (i == word.length() - 1)
 					return;
@@ -38,7 +38,7 @@ void Trie::insert(const std::string& word)
 				current_node = current_node->children[word[i]];
 			}
 
-			current_node->children[word[i]] = NULL;
+			current_node->children[word[i]] = nullptr;
 			return;
 		}			
 	}
@@ -52,60 +52,74 @@ bool Trie::search(const std::string& word) const
 
 	for (int i = 0; i < word.length(); i++) 
 	{
-		if (current_node->children.find(word[i]) == current_node->children.end() || (current_node->children[word[i]] == NULL && i != word.length() - 1))
+		if (current_node->children.find(word[i]) == current_node->children.end())
+			return false;
+		
+		if (!has_children(current_node->children.at(word[i])) && i != word.length() - 1)
 			return false;
 
 		current_node = current_node->children[word[i]];
 	}
 
-	return current_node == NULL || current_node->is_end_point;
+	return is_end_point(current_node);
 }
 
-int Trie::search_best_matches(const std::string & word, std::vector<std::string>& matches)
+int Trie::search_best_matches(StringMetricCalculator& calculator, std::set<std::string>& matches)
 {
-	matches.clear();
-	string_metric_calculator->set_base_word(word);
-
 	int best_score = INT32_MAX;
-	std::shared_ptr<Node> current_node = root;
-	std::stack<std::pair<std::shared_ptr<Node>, std::map<char, std::shared_ptr<Node> >::iterator> > s;
+	matches.clear();
 
-	s.push(std::make_pair(current_node, current_node->children.begin()));
+	typedef std::map<char, std::shared_ptr<Node>>::iterator map_itertor;
+	std::stack<std::pair<map_itertor, map_itertor>> s;
+
+	s.push(std::make_pair(root->children.begin(), root->children.end()));
 	while (!s.empty())
 	{
-		std::pair<std::shared_ptr<Node>, std::map<char, std::shared_ptr<Node> >::iterator> p = s.top(); s.pop();
+		auto p = s.top(); s.pop();
 
-		if (p.second != p.first->children.end())
+		if (p.first != p.second)
 		{
-			current_node = p.second->second;
-			string_metric_calculator->push(p.second->first);
+			std::shared_ptr<Node> current_node = p.first->second;
+			calculator.append_char_to_compared_word(p.first->first);
 
-			if (current_node == NULL || current_node->is_end_point) 
+			s.push(std::make_pair(++p.first, p.second));
+
+			if (calculator.get_potential_best_result() > best_score) {
+				calculator.pop_last_char_of_compared_word();
+				continue;
+			}
+
+			if (is_end_point(current_node))
 			{
-				int score = string_metric_calculator->get_result();
-				if (score <= best_score)
-				{
+				int score = calculator.get_result();
+
+				if (score <= best_score) {
 					if (score < best_score) {
 						matches.clear();
 						best_score = score;
 					}
-
-					matches.push_back(string_metric_calculator->get_searched_word());
+					matches.insert(calculator.get_compared_word());
 				}
 			}
 
-			p.second++;
-			s.push(std::make_pair(p.first, p.second));
-			if (current_node != NULL) 
-				s.push(std::make_pair(current_node, current_node->children.begin()));
-			else
-				string_metric_calculator->pop();
+			if (has_children(current_node)) {
+				s.push(std::make_pair(current_node->children.begin(), current_node->children.end()));
+				continue;
+			}
 		}
-		else
-		{
-			string_metric_calculator->pop();
-		}
+
+		calculator.pop_last_char_of_compared_word();
 	}
 
 	return best_score;
+}
+
+bool Trie::is_end_point(const std::shared_ptr<Node>& node) const
+{
+	return !has_children(node) || node->is_end_point;
+}
+
+bool Trie::has_children(const std::shared_ptr<Node>& node) const
+{
+	return node != nullptr;
 }

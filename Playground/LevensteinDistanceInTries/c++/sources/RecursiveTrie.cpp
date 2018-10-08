@@ -16,11 +16,12 @@ bool RecursiveTrie::search(const std::string& word) const
 	return root.search(word);
 }
 
-int RecursiveTrie::search_best_matches(const std::string& word, std::vector<std::string>& matches)
+int RecursiveTrie::search_best_matches(StringMetricCalculator& calculator, std::set<std::string>& matches)
 {
+	int best_score = INT32_MAX;
 	matches.clear();
-	string_metric_calculator->set_base_word(word);
-	return root.search_best_matches(*string_metric_calculator, matches);
+	root.search_best_matches(calculator, matches, best_score);
+	return best_score;
 }
 
 RecursiveTrie::Node::Node() :
@@ -39,14 +40,14 @@ void RecursiveTrie::Node::insert(const std::string& word)
 	if (children.find(word[0]) == children.end())
 	{
 		if (word.length() == 1) {
-			children[word[0]] = NULL;
+			children[word[0]] = nullptr;
 			return;
 		}
 		else {
 			children[word[0]] = std::shared_ptr<RecursiveTrie::Node>(new RecursiveTrie::Node());
 		}
 	}
-	else if (children[word[0]] == NULL)
+	else if (children[word[0]] == nullptr)
 	{
 		children[word[0]] = std::shared_ptr<RecursiveTrie::Node>(new RecursiveTrie::Node());
 		children[word[0]]->is_end_point = true;
@@ -63,43 +64,53 @@ bool RecursiveTrie::Node::search(const std::string& word) const
 	if (children.find(word[0]) == children.end()) 
 		return false;
 
-	if (children.at(word[0]) == NULL)
+	if (children.at(word[0]) == nullptr)
 		return word.length() == 1;
 
 	return children.at(word[0])->search((char*)&word[1]);
 }
 
-int RecursiveTrie::Node::search_best_matches(StringMetricCalculator& calculator, std::vector<std::string>& matches)
+void RecursiveTrie::Node::search_best_matches(StringMetricCalculator& calculator, std::set<std::string>& matches, int& best_score)
 {
-	int best_score = INT32_MAX;
+	std::multimap<int, std::pair<char, std::shared_ptr<Node>>> sorted_children;
+	sort_children(calculator, sorted_children);
 
-	if (is_end_point) {
-		matches.push_back(calculator.get_searched_word());
-		best_score = calculator.get_result();
-	}
-
-	for (auto& child : children)
+	for (auto& sorted_child : sorted_children)
 	{
-		std::vector<std::string> child_matches;
+		auto& child = sorted_child.second;
+		calculator.append_char_to_compared_word(child.first);
 
-		calculator.push(child.first);
-		int score = (child.second == NULL) ? calculator.get_result() : child.second->search_best_matches(calculator, child_matches);
-
-		if (score <= best_score) 
-		{
-			if (score < best_score) {
-				matches.clear();
-				best_score = score;
-			}
-			
-			if (child.second == NULL) 
-				matches.push_back(calculator.get_searched_word());
-			else 
-				matches.insert(matches.end(), child_matches.begin(), child_matches.end());
+		if (calculator.get_potential_best_result() > best_score) {
+			calculator.pop_last_char_of_compared_word();
+			break;
 		}
 
-		calculator.pop();
-	}
+		if (child.second == nullptr || child.second->is_end_point) 
+		{
+			int score = calculator.get_result();
 
-	return best_score;
+			if (score <= best_score) {
+				if (score < best_score) {
+					matches.clear();
+					best_score = score;
+				}
+				matches.insert(calculator.get_compared_word());
+			}
+		}
+
+		if (child.second != nullptr)
+			child.second->search_best_matches(calculator, matches, best_score);
+
+		calculator.pop_last_char_of_compared_word();
+	}
+}
+
+void RecursiveTrie::Node::sort_children(StringMetricCalculator& calculator, std::multimap<int, std::pair<char, std::shared_ptr<Node>>>& sorted_children)
+{
+	for (auto& child : children)
+	{
+		calculator.append_char_to_compared_word(child.first);
+		sorted_children.insert(std::pair<int, std::pair<char, std::shared_ptr<Node>>>(calculator.get_potential_best_result(), child));
+		calculator.pop_last_char_of_compared_word();
+	}
 }

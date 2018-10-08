@@ -27,19 +27,18 @@ DictionaryBenchmarksBuilder& DictionaryBenchmarksBuilder::with_big_set()
 
 DictionaryBenchmarksBuilder& DictionaryBenchmarksBuilder::with_dictionary(std::shared_ptr<Dictionary>& dictionary, const std::string& name)
 {
-	this->dictionary = dictionary;
 	benchmarks->set_name(name);
+	benchmarks->set_dictionary(dictionary);
 	return *this;
 }
 
 DictionaryBenchmarksBuilder& DictionaryBenchmarksBuilder::with_LV()
 {
-	calculator = std::shared_ptr<StringMetricCalculator>(new LevensteinDistanceMatrix);
+	benchmarks->set_calculator(std::shared_ptr<StringMetricCalculator>(new LevensteinDistanceMatrix));
 	return *this;
 }
 
 std::shared_ptr<DictionaryBenchmarks> DictionaryBenchmarksBuilder::build()
 {
-	benchmarks->set_dictionary(dictionary, calculator);
 	return benchmarks;
 }

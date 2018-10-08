@@ -70,32 +70,30 @@ TYPED_TEST(DictionaryTest, CanInsertMultipleWordsAtOnce)
 
 TYPED_TEST(DictionaryTest, CanFindPrefixAsBestMatch)
 {
-	std::string base_word = "not_important";
-	std::vector<std::string> expected_matches{ "abc"};
-	std::shared_ptr<StringMetricCalculator> calculator_stub(new StringMetricCalculatorStub(expected_matches, 2, base_word));
+	std::set<std::string> expected_matches{ "abc"};
+	std::shared_ptr<StringMetricCalculator> calculator_stub(new StringMetricCalculatorStub(expected_matches, 2));
 
-	dictionary.set_string_metric_calculator(calculator_stub);
-	dictionary.insert(expected_matches);
+	for (auto& match : expected_matches)
+		dictionary.insert(match);
 	dictionary.insert("abcde");
 
-	std::vector<std::string> obtained_matches;
-	int obtained_score = dictionary.search_best_matches(base_word, obtained_matches);
+	std::set<std::string> obtained_matches;
+	int obtained_score = dictionary.search_best_matches(*calculator_stub, obtained_matches);
 
 	ASSERT_THAT(obtained_matches, ContainerEq(expected_matches));
 }
 
 TYPED_TEST(DictionaryTest, CanFindAWordAsBestMatchWhenThePrefixIsAlsoInserted)
 {
-	std::string base_word = "not_important";
-	std::vector<std::string> expected_matches{ "abcde" };
-	std::shared_ptr<StringMetricCalculator> calculator_stub(new StringMetricCalculatorStub(expected_matches, 2, base_word));
+	std::set<std::string> expected_matches{ "abcde" };
+	std::shared_ptr<StringMetricCalculator> calculator_stub(new StringMetricCalculatorStub(expected_matches, 2));
 
-	dictionary.set_string_metric_calculator(calculator_stub);
-	dictionary.insert(expected_matches);
+	for (auto& match : expected_matches)
+		dictionary.insert(match);
 	dictionary.insert("abc");
 
-	std::vector<std::string> obtained_matches;
-	int obtained_score = dictionary.search_best_matches(base_word, obtained_matches);
+	std::set<std::string> obtained_matches;
+	int obtained_score = dictionary.search_best_matches(*calculator_stub, obtained_matches);
 
 	ASSERT_THAT(obtained_matches, ContainerEq(expected_matches));
 }
@@ -103,17 +101,16 @@ TYPED_TEST(DictionaryTest, CanFindAWordAsBestMatchWhenThePrefixIsAlsoInserted)
 TYPED_TEST(DictionaryTest, FindsAllTheBestMatchesWithTheSameScore)
 {
 	int expected_score = 2;
-	std::string base_word = "not_important";
-	std::vector<std::string> expected_matches{ "abcde", "xyzab" };
-	std::shared_ptr<StringMetricCalculator> calculator_stub(new StringMetricCalculatorStub(expected_matches, expected_score, base_word));
+	std::set<std::string> expected_matches{ "abcde", "xyzab" };
+	std::shared_ptr<StringMetricCalculator> calculator_stub(new StringMetricCalculatorStub(expected_matches, expected_score));
 
-	dictionary.set_string_metric_calculator(calculator_stub);
-	dictionary.insert(expected_matches);
+	for(auto& match : expected_matches)
+		dictionary.insert(match);
 	dictionary.insert("hello");
 	dictionary.insert("world");
 
-	std::vector<std::string> obtained_matches;
-	int obtained_score = dictionary.search_best_matches(base_word, obtained_matches);
+	std::set<std::string> obtained_matches;
+	int obtained_score = dictionary.search_best_matches(*calculator_stub, obtained_matches);
 
 	ASSERT_THAT(obtained_score, Eq(expected_score));
 	ASSERT_THAT(obtained_matches, ContainerEq(expected_matches));

@@ -11,10 +11,14 @@ DictionaryBenchmarks::DictionaryBenchmarks(std::ostream& output_stream) :
 {
 }
 
-void DictionaryBenchmarks::set_dictionary(std::shared_ptr<Dictionary>& dictionary, std::shared_ptr<StringMetricCalculator>& calculator)
+void DictionaryBenchmarks::set_dictionary(std::shared_ptr<Dictionary>& dictionary)
 {
 	this->dictionary = dictionary;
-	this->dictionary->set_string_metric_calculator(calculator);
+}
+
+void DictionaryBenchmarks::set_calculator(std::shared_ptr<StringMetricCalculator>& calculator)
+{
+	this->calculator = calculator;
 }
 
 void DictionaryBenchmarks::set_name(const std::string & name)
@@ -43,9 +47,7 @@ void DictionaryBenchmarks::run_creation()
 
 	size_t step = BenchmarkWords::words->size() / size;
 	for (size_t i = 0; i < BenchmarkWords::words->size(); i += step)
-	{
 		dictionary->insert(BenchmarkWords::words->at(i));
-	}
 }
 
 void DictionaryBenchmarks::insert_words_for_searches()
@@ -85,12 +87,16 @@ void DictionaryBenchmarks::run_search_best_matches()
 	ss << "Search best matches (" << BenchmarkWords::words_to_search->all().size() << " words)";
 
 	TestTimer timer(ss.str(), *output_stream);
+
+	std::set<std::string> matches;
 	for (auto& word_it : BenchmarkWords::words_to_search_wrong_spelling->all())
 	{
-		std::vector<std::string> matches;
-		dictionary->search_best_matches(word_it.first, matches);
-		if (matches != word_it.second) 
+		this->calculator->set_base_word(word_it.first);
+
+		dictionary->search_best_matches(*calculator, matches);
+		if (matches != word_it.second) {
 			throw std::exception(std::string("Unexpected results for search best matches on word " + word_it.first).c_str());
+		}
 	}
 }
 

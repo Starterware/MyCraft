@@ -67,17 +67,17 @@ BenchmarkWords::WordsToSearchWrongSpelling::WordsToSearchWrongSpelling()
 		std::istringstream iss(line);
 		iss >> key;
 
-		m[key] = std::vector<std::string>();
+		m[key] = std::set<std::string>();
 
 		while (!iss.eof()) {
 			std::string value;
 			iss >> value;
-			m[key].push_back(value);
+			m[key].insert(value);
 		}
 	}
 }
 
-std::map<std::string, std::vector<std::string>>& BenchmarkWords::WordsToSearchWrongSpelling::all()
+std::map<std::string, std::set<std::string>>& BenchmarkWords::WordsToSearchWrongSpelling::all()
 {
 	return m;
 }

@@ -6,5 +6,8 @@ Kata/**/.cache
 Kata/**/__pycache__
 Kata/**/*.pyc
 
+# Machine Learning
+**/.idea/**
+
 # Project Euler
 ProjectEuler/sources/**/CMakeLists.txt

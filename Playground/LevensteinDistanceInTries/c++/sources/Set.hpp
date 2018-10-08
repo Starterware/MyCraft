@@ -8,10 +8,10 @@
 class Set : public Dictionary
 {
 public:
-	void insert(const std::string& word);
-	void insert(const std::vector<std::string>& words); 
-	bool search(const std::string& word) const;
-	int search_best_matches(const std::string& word, std::vector<std::string>& matches);
+	EXPORT_DECLSPEC void insert(const std::string& word);
+	EXPORT_DECLSPEC void insert(const std::vector<std::string>& words);
+	EXPORT_DECLSPEC bool search(const std::string& word) const;
+	EXPORT_DECLSPEC int search_best_matches(StringMetricCalculator& calculator, std::set<std::string>& matches);
 
 private:
 	std::set<std::string> words;

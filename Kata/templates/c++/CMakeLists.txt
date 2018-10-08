@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.0)
 
 set(TARGET_NAME "KataTests")
 
-set (GTEST_DIR "D:/Code/BxMed/cots/gtest/win")
+set (GTEST_DIR )
 set (GTEST_ALL_LIBS 
 		${GTEST_DIR}/lib/gtest.lib
 		${GTEST_DIR}/lib/gtest_main.lib
@@ -21,4 +21,3 @@ file(GLOB SOURCES *.cpp)
 include_directories(${GTEST_INCLUDE_DIRS} header)
 add_executable(${TARGET_NAME} ${SOURCES} ${HEADERS})
 target_link_libraries(${TARGET_NAME} ${GTEST_ALL_LIBS})
-

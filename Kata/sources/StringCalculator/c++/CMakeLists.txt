@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.0)
 
 set(TARGET_NAME "KataTests")
 
-set (GTEST_DIR "D:/Code/BxMed/cots/gtest/win")
+set (GTEST_DIR "D:\Code\BxMed\cots\gtest\unix")
 set (GTEST_ALL_LIBS 
 		${GTEST_DIR}/lib/gtest.lib
 		${GTEST_DIR}/lib/gtest_main.lib

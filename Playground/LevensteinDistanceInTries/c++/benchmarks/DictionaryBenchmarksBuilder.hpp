@@ -18,8 +18,6 @@ public:
 
 protected:
 	std::shared_ptr<DictionaryBenchmarks> benchmarks;
-	std::shared_ptr<Dictionary> dictionary; 
-	std::shared_ptr<StringMetricCalculator> calculator;
 };
 
 #endif

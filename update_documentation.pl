@@ -46,8 +46,6 @@ sub FindNextEmptyLine
 	return $#lines;
 }
 
-# Katas related functions
-
 sub RetrieveLanguages
 {
 	my ($dir) = @_;
@@ -60,13 +58,19 @@ sub RetrieveLanguages
 	return @subdirs;
 }
 
-sub BuildKataLink
+sub BuildSimpleLink
+{
+	my ($dir, $name) = @_;
+	"* [$name]($dir)\n";
+}
+
+sub BuildImplementedInLink
 {
 	my ($dir, $name) = @_;
 	return "* [$name]($dir/README.md) : implemented in " . join(', ', RetrieveLanguages($dir)) . "\n";
 }
 
-sub BuildKataLinkForDir
+sub GetNameFromMd
 {
 	my ($dir) = @_;
     my @readme = ReadLinesFromFile("$dir/README.md");
@@ -74,8 +78,10 @@ sub BuildKataLinkForDir
 	
 	$name =~ s/^\s+|\s+$//g;
 	
-	return BuildKataLink($dir, $name);
+	return $name;
 }
+
+# Katas related functions
 
 sub BuildKatasLinks
 {
@@ -84,7 +90,24 @@ sub BuildKatasLinks
 	my @dirs = ListSubDirectories($sources_folder);
 
 	foreach my $dir (@dirs) {
-		$links .= BuildKataLinkForDir("$sources_folder/$dir");
+		my $name = GetNameFromMd("$sources_folder/$dir");
+		$links .= BuildImplementedInLink("$sources_folder/$dir", $name);
+	}
+	
+	return $links;
+}
+
+# Projects related functions
+
+sub BuildProjectsLinks
+{
+	my $sources_folder = "Playground";
+	my $links = "";
+	my @dirs = ListSubDirectories($sources_folder);
+
+	foreach my $dir (@dirs) {
+		my $name = GetNameFromMd("$sources_folder/$dir");
+		$links .= BuildImplementedInLink("$sources_folder/$dir", $name);
 	}
 	
 	return $links;
@@ -150,6 +173,11 @@ sub UpdateFileContent
 		{
 			$i = FindNextEmptyLine($i+2, @lines) - 1;
 			$filecontent .= "\n" . BuildKatasLinks();
+		}
+		if ($lines[$i] eq "### Projects") 
+		{
+			$i = FindNextEmptyLine($i+2, @lines) - 1;
+			$filecontent .= "\n" . BuildProjectsLinks();
 		}
 		if ($lines[$i] eq "### Problems") 
 		{

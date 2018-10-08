@@ -2,6 +2,7 @@
 #define BENCHMARK_WORDS_HPP
 
 #include <vector>
+#include <set>
 #include <string>
 #include <map>
 #include <memory>
@@ -32,9 +33,9 @@ public:
 	{
 	public:
 		WordsToSearchWrongSpelling();
-		std::map<std::string, std::vector<std::string> >& all();
+		std::map<std::string, std::set<std::string> >& all();
 	private:
-		std::map<std::string, std::vector<std::string> > m;
+		std::map<std::string, std::set<std::string> > m;
 	};
 
 public:

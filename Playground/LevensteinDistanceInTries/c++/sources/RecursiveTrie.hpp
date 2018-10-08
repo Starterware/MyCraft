@@ -4,27 +4,32 @@
 
 #include "Dictionary.hpp"
 #include "StringMetricCalculator.hpp"
+#include "LevensteinDistanceInTries.hpp"
 
 #include <map>
+#include <unordered_map>
 #include <memory>
 
 class RecursiveTrie : public Dictionary
 {
 public:
-	void insert(const std::string& word);
-	void insert(const std::vector<std::string>& words);
-	bool search(const std::string& word) const;
-	int search_best_matches(const std::string& word, std::vector<std::string>& matches);
+	EXPORT_DECLSPEC void insert(const std::string& word);
+	EXPORT_DECLSPEC void insert(const std::vector<std::string>& words);
+	EXPORT_DECLSPEC bool search(const std::string& word) const;
+	EXPORT_DECLSPEC int search_best_matches(StringMetricCalculator& calculator, std::set<std::string>& matches);
 
 private:
 	class Node {
 	public:
-		Node();
+		EXPORT_DECLSPEC Node();
 
 		void insert(const std::string& word);
 		bool search(const std::string& word) const;
-		int search_best_matches(StringMetricCalculator& calculator, std::vector<std::string>& matches);
+		void search_best_matches(StringMetricCalculator& calculator, std::set<std::string>& matches, int& best_score);
 
+	private:
+		void sort_children(StringMetricCalculator& calculator, std::multimap<int, std::pair<char, std::shared_ptr<Node>>>& sorted_children);
+		
 	private:
 		std::map<char, std::shared_ptr<Node>> children;
 		bool is_end_point = false;

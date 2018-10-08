@@ -3,58 +3,78 @@
 # Levenstein Distance In Tries
 
 Started a little project to see the impact of Levenstein Distance performance in a Trie (Recursive and iterative) vs a simple Set.
-The Tries are implemented in such a way that they don't have leaf nodes in order to limit the memory use. 
 
-## Usage
+## C++
 
-Without parameters the program will run the unit test (googletests) and when adding --benchmarks, it will run the benchmarks.
-At the moment, the program only works on Windows systems.
+### Usage
+
+The project is cut in three parts:
+ * The LevensteinDictionaryInTries libraries, which contains the Tries and Set code
+ * The LevensteinDictionaryInTriesTests executable, which contains all the tests
+ * The LevensteinDictionaryInTriesBenchmarks executable, which contains some benchmark tests
+ 
+It is possible to modify the benchmarks by going to the data folder in the benchmark folder. There are three files: 
+ * words.txt: which are the dictionary words
+ * words_to_search.txt: which are the well spelled words to search
+ * words_to_search_wrong_spelling.txt: which are the wrongly spelled words. Each row starts with the wrongly spelled word, followed by the expected results (words with the same LV distance).
+
+### Implementation
+
+The Tries are implemented in such a way that they don't have leaf nodes in order to limit the memory use. However, this makes the algorithms a bit harder to understand.
+
+The first version showed already that the Tries where ~3 times faster than the Set implementation (especially on the big dictionaries). Then, the get_potential_best methods was added 
+on the LevensteinDistanceCalculator and it made the Tries ~3 times faster. The final implementation, on the RecursiveTrie, first sorts the children according to their potential best score.
+This allow the prune even more the Trie. The sorting has not been added to the non-recursive Trie for code lisibility reasons. 
+
+### Limitations
+
+ * The code has not been tested on other platforms than windows. The benchmarks will for sure fail on other platforms.
 
 ## Benchmarks
 
 ### System
 
-Run on a laptop with windows 10 Home
+Run on a laptop with windows 10 Home:
 
-Processor: Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
+ * Processor: Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
 
-Installed Memory: 8,00 GB
+ * Installed Memory: 8,00 GB
 
-System Type: 64-bit OS, x64-based processor
+ * System Type: 64-bit OS, x64-based processor
 
-### Results
+### C++ Results
 
 =========== Set Dictionary benchmark tests ===========
 
 ----- Set Dictionary estimated times [4665 entries] -----
 
-  Creation: 2.665 ms
+  Creation: 2.065 ms
   
-  Used Memory: 652 kB
+  Used Memory: 568 kB
   
-  Search (10000 times 10 findable words and 10 not found words): 25.312 ms
+  Search (10000 times 10 findable words and 10 not found words): 21.917 ms
   
-  Search best matches (10 words): 344.104 ms
+  Search best matches (10 words): 273.518 ms
 
 ----- Set Dictionary estimated times [46654 entries] -----
 
-  Creation: 24.084 ms
+  Creation: 21.567 ms
   
-  Used Memory: 3376 kB
+  Used Memory: 2388 kB
   
-  Search (10000 times 10 findable words and 10 not found words): 28.543 ms
+  Search (10000 times 10 findable words and 10 not found words): 35.064 ms
   
-  Search best matches (10 words): 3219.26 ms
+  Search best matches (10 words): 2824.06 ms
 
 ----- Set Dictionary estimated times [466544 entries] -----
 
-  Creation: 220.751 ms
+  Creation: 228.558 ms
   
-  Used Memory: 34884 kB
+  Used Memory: 34744 kB
   
-  Search (10000 times 10 findable words and 10 not found words): 35.691 ms
+  Search (10000 times 10 findable words and 10 not found words): 37.404 ms
   
-  Search best matches (10 words): 30175 ms
+  Search best matches (10 words): 28261.6 ms
 
 =========== Set Dictionary benchmark tests ===========
 
@@ -62,33 +82,33 @@ System Type: 64-bit OS, x64-based processor
 
 ----- Trie Dictionary estimated times [4665 entries] -----
 
-  Creation: 7.995 ms
+  Creation: 10.347 ms
   
-  Used Memory: 6644 kB
+  Used Memory: 6528 kB
   
-  Search (10000 times 10 findable words and 10 not found words): 53.091 ms
+  Search (10000 times 10 findable words and 10 not found words): 71.871 ms
   
-  Search best matches (10 words): 242.809 ms
+  Search best matches (10 words): 101.748 ms
 
 ----- Trie Dictionary estimated times [46654 entries] -----
 
-  Creation: 78.708 ms
+  Creation: 74.714 ms
   
-  Used Memory: 36316 kB
+  Used Memory: 36552 kB
   
-  Search (10000 times 10 findable words and 10 not found words): 54.636 ms
+  Search (10000 times 10 findable words and 10 not found words): 68.89 ms
   
-  Search best matches (10 words): 1933.24 ms
+  Search best matches (10 words): 572.583 ms
 
 ----- Trie Dictionary estimated times [466544 entries] -----
 
-  Creation: 416.255 ms
+  Creation: 449.958 ms
   
-  Used Memory: 187540 kB
+  Used Memory: 187536 kB
   
-  Search (10000 times 10 findable words and 10 not found words): 63.041 ms
+  Search (10000 times 10 findable words and 10 not found words): 61.739 ms
   
-  Search best matches (10 words): 11355 ms
+  Search best matches (10 words): 2318.9 ms
 
 =========== Trie Dictionary benchmark tests ===========
 
@@ -96,33 +116,32 @@ System Type: 64-bit OS, x64-based processor
 
 ----- Recursive Trie Dictionary estimated times [4665 entries] -----
 
-  Creation: 9.391 ms
+  Creation: 11.658 ms
   
-  Used Memory: 7524 kB
+  Used Memory: 6668 kB
   
-  Search (10000 times 10 findable words and 10 not found words): 66.191 ms
+  Search (10000 times 10 findable words and 10 not found words): 62.928 ms
   
-  Search best matches (10 words): 253.167 ms
-  
+  Search best matches (10 words): 42.884 ms
 
 ----- Recursive Trie Dictionary estimated times [46654 entries] -----
 
-  Creation: 90.01 ms
+  Creation: 80.477 ms
   
-  Used Memory: 36384 kB
+  Used Memory: 37808 kB
   
-  Search (10000 times 10 findable words and 10 not found words): 69.567 ms
+  Search (10000 times 10 findable words and 10 not found words): 68.882 ms
   
-  Search best matches (10 words): 2055.03 ms
+  Search best matches (10 words): 195.968 ms
 
 ----- Recursive Trie Dictionary estimated times [466544 entries] -----
 
-  Creation: 560.59 ms
+  Creation: 533.413 ms
   
-  Used Memory: 193480 kB
+  Used Memory: 192856 kB
   
-  Search (10000 times 10 findable words and 10 not found words): 81.675 ms
+  Search (10000 times 10 findable words and 10 not found words): 85.026 ms
   
-  Search best matches (10 words): 12491.9 ms
+  Search best matches (10 words): 456.566 ms
 
 =========== Recursive Trie Dictionary benchmark tests ===========

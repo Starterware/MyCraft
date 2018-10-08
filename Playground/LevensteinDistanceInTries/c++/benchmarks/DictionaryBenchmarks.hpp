@@ -11,7 +11,8 @@ class DictionaryBenchmarks : public Benchmarks
 public:
 	DictionaryBenchmarks(std::ostream& output_stream);
 
-	void set_dictionary(std::shared_ptr<Dictionary>& dictionary, std::shared_ptr<StringMetricCalculator>& calculator);
+	void set_dictionary(std::shared_ptr<Dictionary>& dictionary);
+	void set_calculator(std::shared_ptr<StringMetricCalculator>& calculator);
 	void set_name(const std::string& name);
 	void set_size(int size);
 
@@ -28,6 +29,7 @@ protected:
 
 protected:
 	std::shared_ptr<Dictionary> dictionary;
+	std::shared_ptr<StringMetricCalculator> calculator;
 	std::string name;
 	int size;
 };
