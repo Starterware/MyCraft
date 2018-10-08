@@ -24,14 +24,14 @@ They allow to train easily your Test Driven Development skills.
 * The sources require a C++ 11 compiler
 * [googletests](https://github.com/google/googletest) must be installed on the system
 
-##### Build & Run<sup>[1](#note1)</sup><sup>[2](#note2)</sup>
+##### Build & Run <sup>[1](#note1)</sup> <sup>[2](#note2)</sup>
 
 * First, run the __setup.pl__ script which can be found in the [Kata sources directory](Kata/sources)
 	* The scripts requires a parameter --gtest or -g followed by the path to the googletest include and lib directory
 	* It updates the CMakeFileList.txt for all the sources
 * Create a build directory in the source folder where CMakeFileList.txt is
 * In a command prompt, in the build directory run:
-	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows<sup>[3](#note3)</sup>)
+	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows <sup>[3](#note3)</sup>)
 
 #### Python
 
@@ -59,14 +59,14 @@ Space for testing out little projects/ideas that take a bit of time.
 * The sources require a C++ 11 compiler
 * [googletests](https://github.com/google/googletest) must be installed on the system
 
-##### Build & Run<sup>[1](#note1)</sup><sup>[2](#note2)</sup>
+##### Build & Run <sup>[1](#note1)</sup> <sup>[2](#note2)</sup>
 
 * First, run the __setup.pl__ script which can be found in the [Playground directory](Playground)
 	* The scripts requires a parameter --gtest or -g followed by the path to the googletest include and lib directory
 	* It updates the CMakeFileList.txt for all the sources
 * Create a build directory in the source folder where CMakeFileList.txt is
 * In a command prompt, in the build directory run:
-	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows<sup>[3](#note3)</sup>)
+	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows <sup>[3](#note3)</sup>)
 
 ### Projects
 
