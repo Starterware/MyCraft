@@ -33,11 +33,11 @@ They allow to train easily your Test Driven Development skills.
 * In a command prompt, in the build directory run:
 	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows)
 
-_Rem 1: some projects may not work on all platforms. See the projects page for more information about that._
+##### Remarks
 
-_Rem 2: in Visual Studio, when gtest is used, set the project to the same C/C++ > Code Generation > Runtime Library._
-
-_Rem 3: nothing prevents you to use your own compilation method._
+_1. some projects may not work on all platforms. See the projects page for more information about that._
+_2. in Visual Studio, when gtest is used, set the project to the same C/C++ > Code Generation > Runtime Library._
+_3. nothing prevents you to use your own compilation method._
 
 #### Python
 
@@ -74,11 +74,11 @@ Space for testing out little projects/ideas that take a bit of time.
 * In a command prompt, in the build directory run:
 	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows)
 
-_Rem 1: some projects may not work on all platforms. See the projects page for more information about that._
+##### Remarks
 
-_Rem 2: in Visual Studio, when gtest is used, set the project to the same C/C++ > Code Generation > Runtime Library._
-
-_Rem 3: nothing prevents you to use your own compilation method._
+_1. some projects may not work on all platforms. See the projects page for more information about that._
+_2. in Visual Studio, when gtest is used, set the project to the same C/C++ > Code Generation > Runtime Library._
+_3. nothing prevents you to use your own compilation method._
 
 ### Projects
 
@@ -106,8 +106,10 @@ My project euler username is **Starter101**. Not all the problems I did are list
 * In a command prompt, in the build directory run:
 	* __cmake ..__ (I add [__-G "Unix Makefiles"__] to generate a simple makefile)
 	* Afterwards run __make__ to compile and run the program
-	
-_Rem: the compiling instructions represent my preferred way and allow to compile easily on all platforms. Nothing prevents you to use your own compilation method._
+
+##### Remarks
+
+_1. Rem: the compiling instructions represent my preferred way and allow to compile easily on all platforms. Nothing prevents you to use your own compilation method._
 
 ### Problems
 
