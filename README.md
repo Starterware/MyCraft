@@ -24,7 +24,7 @@ They allow to train easily your Test Driven Development skills.
 * The sources require a C++ 11 compiler
 * [googletests](https://github.com/google/googletest) must be installed on the system
 
-##### Build & Run[^1][^2]
+##### Build & Run[1][2]
 
 * First, run the __setup.pl__ script which can be found in the [Kata sources directory](Kata/sources)
 	* The scripts requires a parameter --gtest or -g followed by the path to the googletest include and lib directory
@@ -65,7 +65,7 @@ Space for testing out little projects/ideas that take a bit of time.
 * The sources require a C++ 11 compiler
 * [googletests](https://github.com/google/googletest) must be installed on the system
 
-##### Build & Run[^1][^2]
+##### Build & Run[1][2]
 
 * First, run the __setup.pl__ script which can be found in the [Playground directory](Playground)
 	* The scripts requires a parameter --gtest or -g followed by the path to the googletest include and lib directory
@@ -92,7 +92,7 @@ My project euler username is **Starter101**. Not all the problems I did are list
 * [CMake](https://cmake.org/) must be installed and accessible from the sources
 * The sources require a C++ 11 compiler
 
-##### Build & Run [^1]
+##### Build & Run [1]
 
 * First, run the __setup.pl__ script which can be found in the [project euler directory](ProjectEuler)
 	* It generates the CMakeFileList.txt for all the sources
@@ -127,6 +127,6 @@ My project euler username is **Starter101**. Not all the problems I did are list
 * [Square Root Digital Expansion](https://projecteuler.net/problem=80) : problem 80 [[source](ProjectEuler/sources/SquareRootDigitalExpansion)]
 * [Su Doku](https://projecteuler.net/problem=96) : problem 96 [[source](ProjectEuler/sources/SuDoku)]
 
-[^1] The compiling instructions represent my preferred way and allow to compile easily on all platforms. Nothing prevents you to use your own compilation method.
-[^2] Some projects may not work on all platforms. See the projects page for more information about that.
-[^3] In Visual Studio, when gtest is used, set the project to the same C/C++ > Code Generation > Runtime Library.
+[1] The compiling instructions represent my preferred way and allow to compile easily on all platforms. Nothing prevents you to use your own compilation method.
+[2] Some projects may not work on all platforms. See the projects page for more information about that.
+[3] In Visual Studio, when gtest is used, set the project to the same C/C++ > Code Generation > Runtime Library.
