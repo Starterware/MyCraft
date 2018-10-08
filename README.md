@@ -24,7 +24,7 @@ They allow to train easily your Test Driven Development skills.
 * The sources require a C++ 11 compiler
 * [googletests](https://github.com/google/googletest) must be installed on the system
 
-#### Build & Run
+##### Build & Run
 
 * First, run the __setup.pl__ script which can be found in the [Kata sources directory](Kata/sources)
 	* The scripts requires a parameter --gtest or -g followed by the path to the googletest include and lib directory
@@ -65,7 +65,7 @@ Space for testing out little projects/ideas that take a bit of time.
 * The sources require a C++ 11 compiler
 * [googletests](https://github.com/google/googletest) must be installed on the system
 
-#### Build & Run
+##### Build & Run
 
 * First, run the __setup.pl__ script which can be found in the [Playground directory](Playground)
 	* The scripts requires a parameter --gtest or -g followed by the path to the googletest include and lib directory
