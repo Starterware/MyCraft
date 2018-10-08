@@ -24,20 +24,14 @@ They allow to train easily your Test Driven Development skills.
 * The sources require a C++ 11 compiler
 * [googletests](https://github.com/google/googletest) must be installed on the system
 
-##### Build & Run[1][2]
+##### Build & Run<sup>[1](#note1)</sup><sup>[2](#note2)</sup>
 
 * First, run the __setup.pl__ script which can be found in the [Kata sources directory](Kata/sources)
 	* The scripts requires a parameter --gtest or -g followed by the path to the googletest include and lib directory
 	* It updates the CMakeFileList.txt for all the sources
 * Create a build directory in the source folder where CMakeFileList.txt is
 * In a command prompt, in the build directory run:
-	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows[^3])
-
-##### Remarks
-
-_1. some projects may not work on all platforms. See the projects page for more information about that._
-_2. in Visual Studio, when gtest is used, set the project to the same C/C++ > Code Generation > Runtime Library._
-_3. nothing prevents you to use your own compilation method._
+	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows<sup>[3](#note3)</sup>)
 
 #### Python
 
@@ -65,14 +59,14 @@ Space for testing out little projects/ideas that take a bit of time.
 * The sources require a C++ 11 compiler
 * [googletests](https://github.com/google/googletest) must be installed on the system
 
-##### Build & Run[1][2]
+##### Build & Run<sup>[1](#note1)</sup><sup>[2](#note2)</sup>
 
 * First, run the __setup.pl__ script which can be found in the [Playground directory](Playground)
 	* The scripts requires a parameter --gtest or -g followed by the path to the googletest include and lib directory
 	* It updates the CMakeFileList.txt for all the sources
 * Create a build directory in the source folder where CMakeFileList.txt is
 * In a command prompt, in the build directory run:
-	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows[^3])
+	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows<sup>[3](#note3)</sup>)
 
 ### Projects
 
@@ -92,7 +86,7 @@ My project euler username is **Starter101**. Not all the problems I did are list
 * [CMake](https://cmake.org/) must be installed and accessible from the sources
 * The sources require a C++ 11 compiler
 
-##### Build & Run [1]
+##### Build & Run <sup>[1](#note1)</sup>
 
 * First, run the __setup.pl__ script which can be found in the [project euler directory](ProjectEuler)
 	* It generates the CMakeFileList.txt for all the sources
@@ -127,6 +121,10 @@ My project euler username is **Starter101**. Not all the problems I did are list
 * [Square Root Digital Expansion](https://projecteuler.net/problem=80) : problem 80 [[source](ProjectEuler/sources/SquareRootDigitalExpansion)]
 * [Su Doku](https://projecteuler.net/problem=96) : problem 96 [[source](ProjectEuler/sources/SuDoku)]
 
-[1] The compiling instructions represent my preferred way and allow to compile easily on all platforms. Nothing prevents you to use your own compilation method.
-[2] Some projects may not work on all platforms. See the projects page for more information about that.
-[3] In Visual Studio, when gtest is used, set the project to the same C/C++ > Code Generation > Runtime Library.
+---
+
+_<a name="note1">1</a>: The compiling instructions represent my preferred way and allow to compile easily on all platforms. Nothing prevents you to use your own compilation method._
+
+_<a name="note2">2</a>: Some projects may not work on all platforms. See the projects page for more information about that._
+
+_<a name="note3">3</a>: In Visual Studio, when gtest is used, set the project to the same C/C++ > Code Generation > Runtime Library._
