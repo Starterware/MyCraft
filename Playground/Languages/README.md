@@ -1,5 +1,6 @@
-[Home](https://github.com/Starterware/Training)
+[Home](../..)
 
 # Languages
 
-This project is to play a bit with the languages datastructures. Should been seen more like documentation.
+This section is to play a bit with the languages datastructures. 
+Some of the languages contain exercices from books, see in the source codes for more information.

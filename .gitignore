@@ -1,10 +1,12 @@
 # builds
 **/build/**
+**/target/**
 
 # Kata
 Kata/**/.cache
 Kata/**/__pycache__
 Kata/**/*.pyc
+Kata/**/*.iml
 
 # Machine Learning
 **/.idea/**
