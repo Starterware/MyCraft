@@ -2,6 +2,9 @@
 **/build/**
 **/target/**
 
+# Playground
+Playground/**/*.iml
+
 # Kata
 Kata/**/.cache
 Kata/**/__pycache__

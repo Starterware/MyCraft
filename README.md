@@ -41,6 +41,11 @@ When nose is installed and accessible from any directory :
 * In a command prompt, go to the directory containing the unit tests
 * Run nosetests, and the tests results will appear
 
+#### Java
+
+For Java, I'm using maven. With IDEs like Intellij and eclipse, simply impor the project (pom.xml file). 
+For the tests, I'm using JUnit 5 with the Google Truth library for assertions.
+
 ### Katas
 
 * [String Calculator](Kata/sources/StringCalculator/README.md) : implemented in [c++](Kata/sources/StringCalculator/c++), [python](Kata/sources/StringCalculator/python)
