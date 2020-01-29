@@ -1,5 +1,3 @@
-[Home](https://github.com/Starterware/Training)
-
 # String Calculator 
 
 The complete description can be found at [link](http://osherove.com/tdd-kata-1/).

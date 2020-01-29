@@ -1,5 +1,3 @@
-[Home](https://github.com/Starterware/MyCraft)
-
 # Languages
 
 This section is to play a bit with the languages datastructures. 

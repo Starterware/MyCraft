@@ -74,7 +74,7 @@ sub GetNameFromMd
 {
 	my ($dir) = @_;
     my @readme = ReadLinesFromFile("$dir/README.md");
-	my $name = substr $readme[2], 1;
+	my $name = substr $readme[0], 1;
 	
 	$name =~ s/^\s+|\s+$//g;
 	
@@ -90,8 +90,12 @@ sub BuildKatasLinks
 	my @dirs = ListSubDirectories($sources_folder);
 
 	foreach my $dir (@dirs) {
-		my $name = GetNameFromMd("$sources_folder/$dir");
-		$links .= BuildImplementedInLink("$sources_folder/$dir", $name);
+		eval {
+			my $name = GetNameFromMd("$sources_folder/$dir");
+			$links .= BuildImplementedInLink("$sources_folder/$dir", $name);
+		} or do {
+			warn $@
+		}
 	}
 	
 	return $links;
@@ -106,8 +110,12 @@ sub BuildProjectsLinks
 	my @dirs = ListSubDirectories($sources_folder);
 
 	foreach my $dir (@dirs) {
-		my $name = GetNameFromMd("$sources_folder/$dir");
-		$links .= BuildImplementedInLink("$sources_folder/$dir", $name);
+		eval {
+			my $name = GetNameFromMd("$sources_folder/$dir");
+			$links .= BuildImplementedInLink("$sources_folder/$dir", $name);
+		} or do {
+			warn $@
+		}
 	}
 	
 	return $links;
@@ -151,7 +159,11 @@ sub BuildProjectEulerLinks
 	my @dirs = ListSubDirectories($sources_folder);
 
 	foreach my $dir (@dirs) {
-		$links .= BuildProjectEulerLinkForDir("$sources_folder/$dir");
+		eval {
+			$links .= BuildProjectEulerLinkForDir("$sources_folder/$dir");
+		} or do {
+			warn $@
+		}
 	}
 	
 	return $links;
@@ -165,7 +177,7 @@ sub UpdateFileContent
 	my $filecontent = "";
 	my $i = 0;
 	
-	while ($i < $#lines)
+	while ($i <= $#lines)
 	{		
 		$filecontent .= $lines[$i] . "\n";
 		

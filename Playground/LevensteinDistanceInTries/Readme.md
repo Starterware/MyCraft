@@ -1,5 +1,3 @@
-[Home](https://github.com/Starterware/Training)
-
 # Levenstein Distance In Tries
 
 Started a little project to see the impact of Levenstein Distance performance in a Trie (Recursive and iterative) vs a simple Set.

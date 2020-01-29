@@ -3,102 +3,39 @@
 Welcome to **Starterware Training**, I created this repository in order to work on my craft.
 It's a space where I try out different kind of practices, exercises, programming languages and techniques.
 
+
 ## Table of Contents
 
 * [Kata](#kata)
 * [Playground](#playground)
 * [Project Euler](#project-euler-problems)
+* [Appendix](#Appendix)
+	* [How to build](#how-to-build)
+
 
 ## Kata
 
 Short coding exercises that can be repeated multiple times in order to have the hang of it. 
 They allow to train easily your Test Driven Development skills.
 
-### How to Build & Run
-
-#### C++
-
-##### Prerequisites
-
-* CMake must be installed and accessible from the sources
-* The sources require a C++ 11 compiler
-* [googletests](https://github.com/google/googletest) must be installed on the system
-
-##### Build & Run <sup>[1](#note1)</sup> <sup>[2](#note2)</sup>
-
-* First, run the __setup.pl__ script which can be found in the [Kata sources directory](Kata/sources)
-	* The scripts requires a parameter --gtest or -g followed by the path to the googletest include and lib directory
-	* It updates the CMakeFileList.txt for all the sources
-* Create a build directory in the source folder where CMakeFileList.txt is
-* In a command prompt, in the build directory run:
-	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows <sup>[3](#note3)</sup>)
-
-#### Python
-
-For python, I used [nose](http://nose.readthedocs.io/en/latest/) to run the tests and [spyder](https://pythonhosted.org/spyder/) as IDE in order to have nice formatted unit tests outputs.
-
-When nose is installed and accessible from any directory :
-* In a command prompt, go to the directory containing the unit tests
-* Run nosetests, and the tests results will appear
-
-#### Java
-
-For Java, I'm using maven. With IDEs like Intellij and eclipse, simply impor the project (pom.xml file). 
-For the tests, I'm using JUnit 5 with the Google Truth library for assertions.
-
 ### Katas
 
 * [String Calculator](Kata/sources/StringCalculator/README.md) : implemented in [c++](Kata/sources/StringCalculator/c++), [python](Kata/sources/StringCalculator/python)
+
 
 ## Playground
 
 Space for testing out little projects/ideas that take a bit of time.
 
-### How to Build & Run
-
-#### C++
-
-##### Prerequisites
-
-* CMake must be installed and accessible from the sources
-* The sources require a C++ 11 compiler
-* [googletests](https://github.com/google/googletest) must be installed on the system
-
-##### Build & Run <sup>[1](#note1)</sup> <sup>[2](#note2)</sup>
-
-* First, run the __setup.pl__ script which can be found in the [Playground directory](Playground)
-	* The scripts requires a parameter --gtest or -g followed by the path to the googletest include and lib directory
-	* It updates the CMakeFileList.txt for all the sources
-* Create a build directory in the source folder where CMakeFileList.txt is
-* In a command prompt, in the build directory run:
-	* __cmake ..__ (I add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows <sup>[3](#note3)</sup>)
-
 ### Projects
 
-* [Languages](Playground/Languages/README.md) : implemented in [c++](Playground/Languages/c++)
+* [Languages](Playground/Languages/README.md) : implemented in [c++](Playground/Languages/c++), [java](Playground/Languages/java)
 * [Levenstein Distance In Tries](Playground/LevensteinDistanceInTries/README.md) : implemented in [c++](Playground/LevensteinDistanceInTries/c++)
+
 
 ## Project Euler Problems
 
 My project euler username is **Starter101**. Not all the problems I did are listed below and all of them are done in C++.
-
-### How to Build & Run
-
-#### C++
-
-##### Prerequisites
-
-* [CMake](https://cmake.org/) must be installed and accessible from the sources
-* The sources require a C++ 11 compiler
-
-##### Build & Run <sup>[1](#note1)</sup>
-
-* First, run the __setup.pl__ script which can be found in the [project euler directory](ProjectEuler)
-	* It generates the CMakeFileList.txt for all the sources
-* Create a build directory in the source folder where CMakeFileList.txt is
-* In a command prompt, in the build directory run:
-	* __cmake ..__ (I add [__-G "Unix Makefiles"__] to generate a simple makefile)
-	* Afterwards run __make__ to compile and run the program
 
 ### Problems
 
@@ -126,6 +63,51 @@ My project euler username is **Starter101**. Not all the problems I did are list
 * [Square Root Digital Expansion](https://projecteuler.net/problem=80) : problem 80 [[source](ProjectEuler/sources/SquareRootDigitalExpansion)]
 * [Su Doku](https://projecteuler.net/problem=96) : problem 96 [[source](ProjectEuler/sources/SuDoku)]
 
+
+## Appendix
+
+### How to Build & Run
+
+Here are some insights on how the projects can be compiled and ran.
+
+#### C++
+
+For C++, I'm using [cmake](https://cmake.org/overview/) allowing to compile the project on all the platforms.
+
+##### Prerequisites
+
+* CMake must be installed and accessible from the sources
+* Most of the sources require a C++ 11 compiler
+* [googletests](https://github.com/google/googletest) must be installed on the system
+* Perl must be installed on the system to run the setup script
+
+##### Build & Run <sup>[1](#note1)</sup> <sup>[2](#note2)</sup>
+
+* First, run the __setup.pl__ script which can be found in the [Kata sources directory](Kata/sources)
+	* Depending on the project, it will create or update the CMakeFileList.txt of the different directories (projects).
+	* Some scripts will require parameters. Those are mentioned in the usage of the script (simply run the program without parameters)
+* Then, run the cmake commands
+	* Example:
+		* Create a build directory in the source folder where CMakeFileList.txt is
+		* In a command prompt, in the build directory run:
+			* __cmake ..__ 
+			* Add [__-G "Visual Studio 14 2015 Win64"__] to generate a visual studio solution on windows <sup>[3](#note3)</sup>
+			* Add [__-G "Unix Makefiles"__] to generate a simple makefile
+
+#### Python
+
+For python, I'm using [nose](http://nose.readthedocs.io/en/latest/) to run the tests and [spyder](https://pythonhosted.org/spyder/) as IDE in order to have nice formatted unit test outputs.
+
+When nose is installed and accessible from any directory :
+* In a command prompt, go to the directory containing the unit tests
+* Run nosetests, and the tests results will appear
+
+#### Java
+
+For Java, I'm using maven. With IDEs like Intellij and eclipse, simply import the project (pom.xml file). 
+For the tests, I'm using JUnit 5 with the [Google Truth library](https://github.com/google/truth) for assertions.
+	
+	
 ---
 
 _<a name="note1">1</a>: The compiling instructions represent my preferred way and allow to compile easily on all platforms. Nothing prevents you to use your own compilation method._
