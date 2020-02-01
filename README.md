@@ -20,6 +20,7 @@ They allow to train easily your Test Driven Development skills.
 
 ### Katas
 
+* [Bowling](Kata/sources/Bowling/README.md) : implemented in [java](Kata/sources/Bowling/java)
 * [String Calculator](Kata/sources/StringCalculator/README.md) : implemented in [c++](Kata/sources/StringCalculator/c++), [python](Kata/sources/StringCalculator/python)
 * [XUnit](Kata/sources/XUnit/README.md) : implemented in [java](Kata/sources/XUnit/java)
 
