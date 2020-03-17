@@ -3,11 +3,6 @@ package Excercices;
 import java.util.*;
 
 public class FirstChapter {
-    /**
-     * Questions:
-     * Does it allow null ?
-     * Is it an Ascii String or an Unicode String ?
-     */
     public boolean hasUniqueChars(String input) {
         if (input.length() > 256) return false;
         byte[] set = new byte[256/8];
@@ -49,11 +44,6 @@ public class FirstChapter {
         return true;
     }
 
-    /**
-     * Questions:
-     * Does it allow null ?
-     * Is it an Ascii String or an Unicode String ?
-     */
     public boolean isPermutation(String s1, String s2) {
         if (s1.length() != s2.length()) return false;
         int[] l = new int[256];
