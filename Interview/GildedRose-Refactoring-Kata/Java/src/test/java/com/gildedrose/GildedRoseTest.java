@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.UpdateStrategy.GetBetterWithTimeUpdateStrategy;
+import com.gildedrose.UpdateStrategy.TicketUpdateStrategy;
 import org.junit.jupiter.api.Test;
 
 import static com.google.common.truth.Truth.assertThat;
@@ -54,9 +56,9 @@ class GildedRoseTest {
 
     @Test
     void testBrieQualityIsLimited() {
-        int sellIn = 0, quality = 50;
+        int sellIn = 0, quality = GetBetterWithTimeUpdateStrategy.MAX_QUALITY;
         Item[] items = items(item(BRIE, sellIn, quality));
-        assertContains(updateQuality(items), item(BRIE, sellIn - 1, 50));
+        assertContains(updateQuality(items), item(BRIE, sellIn - 1, GetBetterWithTimeUpdateStrategy.MAX_QUALITY));
     }
 
     @Test
@@ -89,9 +91,9 @@ class GildedRoseTest {
 
     @Test
     void testBackstagePassItemsQualityIsLimited() {
-        int sellIn = 4, quality = 50;
+        int sellIn = 4, quality = TicketUpdateStrategy.MAX_QUALITY;
         Item[] items = items(item(BACKSTAGE_PASSES, sellIn, quality));
-        assertContains(updateQuality(items), item(BACKSTAGE_PASSES, sellIn - 1, 50));
+        assertContains(updateQuality(items), item(BACKSTAGE_PASSES, sellIn - 1, TicketUpdateStrategy.MAX_QUALITY));
     }
 
     @Test
