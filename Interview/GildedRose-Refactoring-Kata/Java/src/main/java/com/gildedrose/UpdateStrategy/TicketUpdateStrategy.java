@@ -9,15 +9,33 @@ public class TicketUpdateStrategy extends DefaultUpdateStrategy {
 
     @Override
     public void updateQuality(Item item) {
-        if (item.sellIn < 0) {
-            item.quality = 0;
+        if (sellDateHasPassed(item)) {
+            setQualityToWorthless(item);
+        } else {
+            increaseQuality(item);
+        }
+    }
+
+    private void setQualityToWorthless(Item item) {
+        item.quality = 0;
+    }
+
+    private void increaseQuality(Item item) {
+        if (reachedDoubleIncreaseDate(item)) {
+            item.quality += reachedTripleIncreaseDate(item) ? 3 : 2;
         } else {
             item.quality++;
-            if (item.sellIn < DOUBLE_INCREASE_DAYS) {
-                item.quality += (item.sellIn < TRIPLE_INCREASE_DAYS) ? 2 : 1;
-            }
-            if (item.quality > MAX_QUALITY)
-                item.quality = MAX_QUALITY;
         }
+
+        if (item.quality > MAX_QUALITY)
+            item.quality = MAX_QUALITY;
+    }
+
+    public boolean reachedDoubleIncreaseDate(Item item) {
+        return item.sellIn < DOUBLE_INCREASE_DAYS;
+    }
+
+    public boolean reachedTripleIncreaseDate(Item item) {
+        return item.sellIn < TRIPLE_INCREASE_DAYS;
     }
 }

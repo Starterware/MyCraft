@@ -9,11 +9,11 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static com.google.common.truth.Truth.assertThat;
 
 class GildedRoseTest {
-    private final String ITEM_NAME = "Normal Item";
-    private final String CONJURED_ITEM_NAME = "Conjured Item";
-    private final String SULFURAS = "Sulfuras, Hand of Ragnaros";
-    private final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
-    private final String BRIE = "Aged Brie";
+    private final static String ITEM_NAME = "Normal Item";
+    private final static String CONJURED_ITEM_NAME = "Conjured Item";
+    private final static String SULFURAS_ITEM_NAME = ITEM_NAMES.SULFURAS.name;
+    private final static String BACKSTAGE_PASSES_ITEM_NAME = ITEM_NAMES.BACKSTAGE_PASSES.name;
+    private final static String BRIE_ITEM_NAME = ITEM_NAMES.BRIE.name;
 
     @ParameterizedTest
     @CsvSource({ ITEM_NAME+",1", CONJURED_ITEM_NAME+",2" } )
@@ -42,74 +42,74 @@ class GildedRoseTest {
     @Test
     void testSulfurasItemDoNotDegrade() {
         int sellIn = -1, quality = 80;
-        Item[] items = items(item(SULFURAS, sellIn, quality));
-        assertContains(updateQuality(items), item(SULFURAS, sellIn, quality));
+        Item[] items = items(item(SULFURAS_ITEM_NAME, sellIn, quality));
+        assertContains(updateQuality(items), item(SULFURAS_ITEM_NAME, sellIn, quality));
     }
 
     @Test
     void testBrieIncreaseInQuality() {
         int sellIn = 5, quality = 5;
-        Item[] items = items(item(BRIE, sellIn, quality));
-        assertContains(updateQuality(items), item(BRIE, sellIn - 1, quality + 1));
+        Item[] items = items(item(BRIE_ITEM_NAME, sellIn, quality));
+        assertContains(updateQuality(items), item(BRIE_ITEM_NAME, sellIn - 1, quality + 1));
     }
 
     @Test
     void testBrieIncreaseInQualityTwiceAfterSellDate() {
         int sellIn = 0, quality = 5;
-        Item[] items = items(item(BRIE, sellIn, quality));
-        assertContains(updateQuality(items), item(BRIE, sellIn - 1, quality + 2));
+        Item[] items = items(item(BRIE_ITEM_NAME, sellIn, quality));
+        assertContains(updateQuality(items), item(BRIE_ITEM_NAME, sellIn - 1, quality + 2));
     }
 
     @Test
     void testBrieQualityIsLimited() {
         int sellIn = 0, quality = GetBetterWithTimeUpdateStrategy.MAX_QUALITY;
-        Item[] items = items(item(BRIE, sellIn, quality));
-        assertContains(updateQuality(items), item(BRIE, sellIn - 1, GetBetterWithTimeUpdateStrategy.MAX_QUALITY));
+        Item[] items = items(item(BRIE_ITEM_NAME, sellIn, quality));
+        assertContains(updateQuality(items), item(BRIE_ITEM_NAME, sellIn - 1, GetBetterWithTimeUpdateStrategy.MAX_QUALITY));
     }
 
     @Test
     void testBackstagePassItemsIncreaseInQuality() {
         int sellIn = 11, quality = 5;
-        Item[] items = items(item(BACKSTAGE_PASSES, sellIn, quality));
-        assertContains(updateQuality(items), item(BACKSTAGE_PASSES, sellIn - 1, quality + 1));
+        Item[] items = items(item(BACKSTAGE_PASSES_ITEM_NAME, sellIn, quality));
+        assertContains(updateQuality(items), item(BACKSTAGE_PASSES_ITEM_NAME, sellIn - 1, quality + 1));
     }
 
     @Test
     void testBackstagePassItemsIncreaseInQualityTwiceWhenOnlyTenDaysAreLeft() {
         int sellIn = 10, quality = 5;
-        Item[] items = items(item(BACKSTAGE_PASSES, sellIn, quality));
-        assertContains(updateQuality(items), item(BACKSTAGE_PASSES, sellIn - 1, quality + 2));
+        Item[] items = items(item(BACKSTAGE_PASSES_ITEM_NAME, sellIn, quality));
+        assertContains(updateQuality(items), item(BACKSTAGE_PASSES_ITEM_NAME, sellIn - 1, quality + 2));
     }
 
     @Test
     void testBackstagePassItemsIncreaseInQualityTriceWhenOnlyFiveDaysAreLeft() {
         int sellIn = 5, quality = 5;
-        Item[] items = items(item(BACKSTAGE_PASSES, sellIn, quality));
-        assertContains(updateQuality(items), item(BACKSTAGE_PASSES, sellIn - 1, quality + 3));
+        Item[] items = items(item(BACKSTAGE_PASSES_ITEM_NAME, sellIn, quality));
+        assertContains(updateQuality(items), item(BACKSTAGE_PASSES_ITEM_NAME, sellIn - 1, quality + 3));
     }
 
     @Test
     void testBackstagePassItemsAreWorthNothingAfterSellDate() {
         int sellIn = 0, quality = 5;
-        Item[] items = items(item(BACKSTAGE_PASSES, sellIn, quality));
-        assertContains(updateQuality(items), item(BACKSTAGE_PASSES, sellIn - 1, 0));
+        Item[] items = items(item(BACKSTAGE_PASSES_ITEM_NAME, sellIn, quality));
+        assertContains(updateQuality(items), item(BACKSTAGE_PASSES_ITEM_NAME, sellIn - 1, 0));
     }
 
     @Test
     void testBackstagePassItemsQualityIsLimited() {
         int sellIn = 4, quality = TicketUpdateStrategy.MAX_QUALITY;
-        Item[] items = items(item(BACKSTAGE_PASSES, sellIn, quality));
-        assertContains(updateQuality(items), item(BACKSTAGE_PASSES, sellIn - 1, TicketUpdateStrategy.MAX_QUALITY));
+        Item[] items = items(item(BACKSTAGE_PASSES_ITEM_NAME, sellIn, quality));
+        assertContains(updateQuality(items), item(BACKSTAGE_PASSES_ITEM_NAME, sellIn - 1, TicketUpdateStrategy.MAX_QUALITY));
     }
 
     @Test
     void testHandlesMultipleItems() {
         Item[] items = items(
                 item(ITEM_NAME, 3, 4),
-                item(BACKSTAGE_PASSES, 16, 7));
+                item(BACKSTAGE_PASSES_ITEM_NAME, 16, 7));
         assertContains(updateQuality(items),
                 item(ITEM_NAME, 2, 3),
-                item(BACKSTAGE_PASSES, 15, 8));
+                item(BACKSTAGE_PASSES_ITEM_NAME, 15, 8));
     }
 
     @Test

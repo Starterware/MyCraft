@@ -7,7 +7,7 @@ public class GetBetterWithTimeUpdateStrategy extends DefaultUpdateStrategy {
 
     @Override
     public void updateQuality(Item item) {
-        item.quality += (item.sellIn < 0) ? 2 : 1;
+        item.quality += sellDateHasPassed(item) ? 2 : 1;
         if (item.quality > MAX_QUALITY)
             item.quality = MAX_QUALITY;
     }

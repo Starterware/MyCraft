@@ -1,5 +1,7 @@
 package com.gildedrose.UpdateStrategy;
 
+import com.gildedrose.ITEM_KEYWORDS;
+import com.gildedrose.ITEM_NAMES;
 import com.gildedrose.Item;
 
 import java.util.Map;
@@ -11,11 +13,11 @@ public class UpdateStrategyFactory {
     private UpdateStrategy defaultUpdateStrategy = new DefaultUpdateStrategy();
 
     public UpdateStrategyFactory() {
-        exactKeyUpdateStrategyMap.put("Sulfuras, Hand of Ragnaros", new DoNothingUpdateStrategy());
-        exactKeyUpdateStrategyMap.put("Backstage passes to a TAFKAL80ETC concert", new TicketUpdateStrategy());
-        exactKeyUpdateStrategyMap.put("Aged Brie", new GetBetterWithTimeUpdateStrategy());
+        exactKeyUpdateStrategyMap.put(ITEM_NAMES.SULFURAS.name, new DoNothingUpdateStrategy());
+        exactKeyUpdateStrategyMap.put(ITEM_NAMES.BACKSTAGE_PASSES.name, new TicketUpdateStrategy());
+        exactKeyUpdateStrategyMap.put(ITEM_NAMES.BRIE.name, new GetBetterWithTimeUpdateStrategy());
 
-        containsKeyUpdateStrategyMap.put("Conjured", new ConjuredUpdateStrategy());
+        containsKeyUpdateStrategyMap.put(ITEM_KEYWORDS.CONJURED.name, new ConjuredUpdateStrategy());
     }
 
     public UpdateStrategy getStrategy(Item item) {
