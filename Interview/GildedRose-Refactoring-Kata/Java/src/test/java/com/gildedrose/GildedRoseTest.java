@@ -3,38 +3,44 @@ package com.gildedrose;
 import com.gildedrose.UpdateStrategy.GetBetterWithTimeUpdateStrategy;
 import com.gildedrose.UpdateStrategy.TicketUpdateStrategy;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static com.google.common.truth.Truth.assertThat;
 
 class GildedRoseTest {
-    private final String ITEM_NAME = "foo";
+    private final String ITEM_NAME = "Normal Item";
+    private final String CONJURED_ITEM_NAME = "Conjured Item";
     private final String SULFURAS = "Sulfuras, Hand of Ragnaros";
     private final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
     private final String BRIE = "Aged Brie";
 
-    @Test
-    void testItemDegrades() {
+    @ParameterizedTest
+    @CsvSource({ ITEM_NAME+",1", CONJURED_ITEM_NAME+",2" } )
+    void testItemDegrades(String name, int loss) {
         int sellIn = 1, quality = 5;
-        Item[] items = items(item(ITEM_NAME, sellIn, quality));
-        assertContains(updateQuality(items), item(ITEM_NAME, sellIn - 1, quality - 1));
+        Item[] items = items(item(name, sellIn, quality));
+        assertContains(updateQuality(items), item(name, sellIn - 1, quality - loss));
     }
 
-    @Test
-    void testItemDegradesTwiceAfterSellDate() {
+    @ParameterizedTest
+    @CsvSource({ ITEM_NAME, CONJURED_ITEM_NAME } )
+    void testItemQualityCannotBeNegative(String name) {
+        int sellIn = 0, quality = 0;
+        Item[] items = items(item(name, sellIn, quality));
+        assertContains(updateQuality(items), item(name, sellIn - 1, 0));
+    }
+
+    @ParameterizedTest
+    @CsvSource({ ITEM_NAME+",1", CONJURED_ITEM_NAME+",2" } )
+    void testItemDegradesTwiceAfterSellDate(String name, int loss) {
         int sellIn = 0, quality = 5;
-        Item[] items = items(item(ITEM_NAME, sellIn, quality));
-        assertContains(updateQuality(items), item(ITEM_NAME, sellIn - 1, quality - 2));
+        Item[] items = items(item(name, sellIn, quality));
+        assertContains(updateQuality(items), item(name, sellIn - 1, quality - 2 * loss));
     }
 
     @Test
-    void testItemQualityCannotBeNegative() {
-        int sellIn = -1, quality = 0;
-        Item[] items = items(item(ITEM_NAME, sellIn, quality));
-        assertContains(updateQuality(items), item(ITEM_NAME, sellIn - 1, 0));
-    }
-
-    @Test
-    void testSulfuraItemsDoNotDegrade() {
+    void testSulfurasItemDoNotDegrade() {
         int sellIn = -1, quality = 80;
         Item[] items = items(item(SULFURAS, sellIn, quality));
         assertContains(updateQuality(items), item(SULFURAS, sellIn, quality));
