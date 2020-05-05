@@ -1,13 +1,18 @@
-package Excercices;
+package CrackingTheCodingInterviewExercices;
 
+import jdk.jfr.Description;
 import org.junit.jupiter.api.Test;
 
 import java.util.Stack;
 
 import static com.google.common.truth.Truth.assertThat;
 
+/**
+ * Exercises from Cracking the code interview - Chapter 3 - Stacks and Queues
+ */
 public class ThirdChapterTest {
     @Test
+    @Description("Exercise 1")
     void testThreeStackArray() {
         // Did this exercise TDD style
         ThirdChapter.MultiStack s = new ThirdChapter.MultiStack(3, 6);
@@ -52,6 +57,7 @@ public class ThirdChapterTest {
     }
 
     @Test
+    @Description("Exercise 2")
     void testStackWithMin() {
         ThirdChapter.StackWithMin stack = new ThirdChapter.StackWithMin();
         assertThat(stack.min()).isEqualTo(Integer.MAX_VALUE);
@@ -68,6 +74,7 @@ public class ThirdChapterTest {
     }
 
     @Test
+    @Description("Exercise 3")
     void testSetOfStacks() {
         ThirdChapter.SetOfStacks stack = new ThirdChapter.SetOfStacks();
         stack.push(1);
@@ -92,6 +99,7 @@ public class ThirdChapterTest {
     }
 
     @Test
+    @Description("Exercise 4")
     void testHanoi() {
         testHanoi(1);
         testHanoi(2);
@@ -115,6 +123,7 @@ public class ThirdChapterTest {
     }
 
     @Test
+    @Description("Exercise 5")
     void testMyQueue() {
         ThirdChapter.MyQueue<Integer> queue = new ThirdChapter.MyQueue<>();
         queue.add(1);
@@ -135,6 +144,7 @@ public class ThirdChapterTest {
     }
 
     @Test
+    @Description("Exercise 6")
     void testSortStack() {
         ThirdChapter chapter = new ThirdChapter();
         Stack<Integer> s = new Stack<>();
@@ -152,6 +162,7 @@ public class ThirdChapterTest {
     }
 
     @Test
+    @Description("Exercise 7")
     void testAnimalQueue() {
         ThirdChapter.Animals animals = new ThirdChapter.Animals();
         animals.enqueue(new ThirdChapter.Animals.Cat("a"));

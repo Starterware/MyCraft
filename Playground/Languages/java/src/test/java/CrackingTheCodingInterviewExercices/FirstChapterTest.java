@@ -1,5 +1,6 @@
-package Excercices;
+package CrackingTheCodingInterviewExercices;
 
+import jdk.jfr.Description;
 import org.junit.jupiter.api.Test;
 
 import java.util.function.BiFunction;
@@ -14,6 +15,7 @@ public class FirstChapterTest {
     FirstChapter chapter = new FirstChapter();
 
     @Test
+    @Description("Exercise 1")
     void testHasUniqueChars() {
         hasUniqueCharsWithHashMapTest(s -> chapter.hasUniqueChars(s));
         hasUniqueCharsWithHashMapTest(s -> chapter.hasUniqueCharsWithBitSet(s));
@@ -29,6 +31,7 @@ public class FirstChapterTest {
     }
 
     @Test
+    @Description("Exercise 3")
     void testIsPermutation() {
         isPermutationTest((a, b) -> chapter.isPermutation(a, b));
         isPermutationTest((a, b) -> chapter.isPermutationWithHashMap(a, b));
@@ -42,6 +45,7 @@ public class FirstChapterTest {
     }
 
     @Test
+    @Description("Exercise 4")
     void testReplaceSpaces() {
         testReplaceSpaces(" ", "%20");
         testReplaceSpaces("a", "a");
@@ -58,6 +62,7 @@ public class FirstChapterTest {
     }
 
     @Test
+    @Description("Exercise 5")
     void testCompressString() {
         assertThat(chapter.compress("")).isEqualTo("");
         assertThat(chapter.compress("abc")).isEqualTo("abc");
@@ -66,6 +71,7 @@ public class FirstChapterTest {
     }
 
     @Test
+    @Description("Exercise 6")
     void testRotate() {
         rotateTest(new int[][] {{0, 1}, {2, 3}}, new int[][] {{2, 0}, {3, 1}});
         rotateTest(new int[][] {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}}, new int[][] {{6, 3, 0}, {7, 4, 1}, {8, 5, 2}});
@@ -77,6 +83,7 @@ public class FirstChapterTest {
     }
 
     @Test
+    @Description("Exercise 7")
     void testSetZeros() {
         setZerosTest(new int[][] {{0, 1, 2}, {3, 0, 5}, {6, 7, 8}}, new int[][] {{0, 0, 0}, {0, 0, 0}, {0, 0, 8}});
     }
@@ -87,6 +94,7 @@ public class FirstChapterTest {
     }
 
     @Test
+    @Description("Exercise 8")
     void testIsRotation() {
         assertThat(chapter.isRotation("abcdef", "defabc")).isEqualTo(true);
         assertThat(chapter.isRotation("abcdef", "degabc")).isEqualTo(false);

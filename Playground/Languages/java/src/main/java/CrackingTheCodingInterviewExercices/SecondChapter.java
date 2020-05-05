@@ -1,4 +1,4 @@
-package Excercices;
+package CrackingTheCodingInterviewExercices;
 
 import java.util.HashSet;
 import java.util.List;

@@ -1,5 +1,6 @@
-package Excercices;
+package CrackingTheCodingInterviewExercices;
 
+import jdk.jfr.Description;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -9,14 +10,12 @@ import static com.google.common.truth.Truth.assertThat;
 
 /**
  * Exercises from Cracking the code interview - Chapter 2 - List
- * Tips:
- *  1. Lots of problems can be solved by using the runner technique which consists of using a second pointer
- *  2. When stuck during a list problem, explore recursive approaches
  */
 public class SecondChapterTest {
     SecondChapter chapter = new SecondChapter();
 
     @Test
+    @Description("Exercise 1")
     void testRemoveDuplicate() {
         testRemovedDuplicate(l -> chapter.removeDuplicate(l));
         testRemovedDuplicate(l -> chapter.removeDuplicateWithoutBuffer(l));
@@ -34,6 +33,7 @@ public class SecondChapterTest {
     }
 
     @Test
+    @Description("Exercise 2")
     void testKLast() {
         assertThat(chapter.kLast(new SecondChapter.MyList(), 1)).isEqualTo(null);
         assertThat(chapter.kLast(new SecondChapter.MyList(List.of(1, 2, 3)), 4)).isEqualTo(null);
@@ -42,6 +42,7 @@ public class SecondChapterTest {
     }
 
     @Test
+    @Description("Exercise 3")
     void testDeleteNode() {
         SecondChapter.MyList l = new SecondChapter.MyList();
         l.append(1);
@@ -54,6 +55,7 @@ public class SecondChapterTest {
     }
 
     @Test
+    @Description("Exercise 4")
     void testPartition() {
         SecondChapter.MyList l = new SecondChapter.MyList();
         assertThat(l).isEqualTo(new SecondChapter.MyList());
@@ -63,6 +65,7 @@ public class SecondChapterTest {
     }
 
     @Test
+    @Description("Exercise 5")
     void testAddition() {
         testAddition(List.of(1, 5, 2), List.of(3, 6, 9), List.of(4, 1, 2, 1));
         testAddition(List.of(1, 5, 6), List.of(3), List.of(4, 5, 6));
@@ -76,6 +79,7 @@ public class SecondChapterTest {
     }
 
     @Test
+    @Description("Exercise 5")
     void testAdditionReverse() {
         testAdditionReverse(List.of(2, 5, 1), List.of(9, 6, 3), List.of(1, 2, 1, 4));
         testAdditionReverse(List.of(6, 5, 1), List.of(3), List.of(6, 5, 4));
@@ -89,6 +93,7 @@ public class SecondChapterTest {
     }
 
     @Test
+    @Description("Exercise 6")
     void testFindLoopStart() {
         SecondChapter.MyList.Node n1 = new SecondChapter.MyList.Node(1);
         SecondChapter.MyList.Node n2 = new SecondChapter.MyList.Node(2);
@@ -108,6 +113,7 @@ public class SecondChapterTest {
     }
 
     @Test
+    @Description("Exercise 7")
     void testIsPalindrome() {
         assertThat(chapter.isPalindrome(new SecondChapter.MyList())).isTrue();
         assertThat(chapter.isPalindrome(new SecondChapter.MyList(List.of(1, 2, 3, 2, 1)))).isTrue();

@@ -13,11 +13,12 @@ public class HashTableTest {
     * The implementation is not synchronized.
     * In case of a collision, it uses a liked list and if there are more than TREEIFY_THRESHOLD(8) elements, then
     * it uses a tree instead. It allows to have a worst case of log(n)
+    * HashTable can also be used but it is synchronised and therefore slower. To make HashMap thread safe,
+    * use Collections.synchronizedMap(map)
     * */
    @Test
    public void HashMapTest() {
       Map<String, String> map = new HashMap<>();
-
       // How to insert elements
       map.put("key", "value");
       map.put("key2", "value2");
