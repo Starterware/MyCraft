@@ -70,30 +70,3 @@ TEST(data_stucture_tests, hash_tables)
 	table['d'] = 4;
 	EXPECT_THAT(table['d'], Eq(4));
 }
-
-/*
-In computer science, a heap is a specialized tree-based data structure that satisfies the heap property: if P is a parent node of C, 
-then the key (the value) of P is either greater than or equal to (in a max heap) or less than or equal to (in a min heap) the key of C.
-*/
-TEST(data_stucture_tests, heaps)
-{
-	std::map<int, char> m = { { 1, 'a' },{ 2, 'b' },{ 3, 'c' } };
-
-	// How to create a priority_queue O(n) 
-	std::priority_queue<std::pair<int, char> > q (m.begin(), m.end());
-	EXPECT_THAT(q.top().second, Eq('c'));
-
-	// How to add an element O(log(n)
-	q.push(std::make_pair<>(4, 'd'));
-	EXPECT_THAT(q.top().second, Eq('d'));
-
-	// How to remove best priority element O(log(n))
-	q.pop();
-	EXPECT_THAT(q.top().second, Eq('c'));
-
-	// How to check if the heap is empty
-	EXPECT_THAT(q.empty(), Eq(false));
-
-	// How to check the size
-	EXPECT_THAT(q.size(), Eq(3));
-}

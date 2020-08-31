@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.0)
 
 set(TARGET_NAME "DataStructureAndAlgo")
 
-set (GTEST_DIR "C:/Program Files/googletest-distribution")
+set (GTEST_DIR "C:\\Program Files\\googletest-distribution")
 set (GTEST_ALL_LIBS 
 		${GTEST_DIR}/lib/gtest.lib
 		${GTEST_DIR}/lib/gtest_main.lib
